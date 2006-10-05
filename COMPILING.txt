@@ -1,0 +1,24 @@
+Building Doelan from source
+---------------------------
+
+  Doelan requires to be built from source. Maven is project management from
+the Apache Software Foundation.
+
+  You can download it at the following URL:
+
+    http://maven.apache.org
+
+  After installing maven, you can :
+
+  * Compile Doelan: type 'maven'
+  * Build source and binary distribution: type 'maven distrib'
+  * Build the website: type 'maven site'
+  * Clean the build directory (target): type 'maven'
+
+  You'll find the generated files in the 'target' directory.
+  To run Doelan you only need to unpack one of the Doelan binary archives and
+see the instruction in the running section of the README file.
+
+  You can download the latest version of doelan on our website :
+
+    http://transcriptome.ens.fr/doelan

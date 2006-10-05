@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+/*
+ * Copyright 2001-2004 The Apache Software Foundation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+
+<project>
+
+  <!-- the version of maven's project object model -->
+  <pomVersion>3</pomVersion>
+
+  <!-- a unique name for this project -->
+  <id>doelan</id>
+
+  <!-- a short but descriptive name for the project -->
+  <name>Doelan</name>
+
+  <!-- The version of the project under development, e.g.
+       1.1, 1.2, 2.0-SNAPSHOT -->
+  <currentVersion>1.0.1</currentVersion>
+
+  <!-- details about the organization that 'owns' the project -->
+  <organization>
+    <name>École Normale Supérieure Microarray Platform</name>
+    <url>http://www.transcriptome.ens.fr/</url>
+    <logo>/images/logos/ens.png</logo>
+  </organization>
+
+  <!-- the year the project started -->
+  <inceptionYear>2004</inceptionYear>
+  <package>fr.ens.transcriptome.doelan</package>
+  
+  <!-- <logo>http://maven.apache.org/images/maven.jpg</logo>-->
+  <logo>/images/logos/doelan-200.png</logo>
+
+  <description>
+  Doelan is an automated tool to check the quality of produced DNA
+  microarrays. This software is based on the execution of parameted testsuites 
+  on quality control data to validate batches of chips. This software will helps
+  microarray platforms in their quality approach such as ISO 9001 certification.
+  </description>
+  
+  <!-- a short description of what the project does -->
+  <shortDescription>A microarray quality test suite software</shortDescription>
+
+
+  <!-- the project home page -->
+  <url>http://transcriptome.ens.fr/doelan</url>
+  <!--<url>http://skadi.ens.fr/doelan</url>-->
+  
+  <!-- <issueTrackingUrl>http://nagoya.apache.org/scarab/servlet/scarab/</issueTrackingUrl> -->
+
+  <siteAddress>artemis.ens.fr</siteAddress>
+  <siteDirectory>/public_html/doelan</siteDirectory>
+  <distributionSite>artemis.ens.fr</distributionSite>
+  <distributionDirectory>/public_html/downloads/doelan</distributionDirectory>
+
+  
+  <!-- the version control repository and http url for online access
+       the connection element has the form:
+       scm:<system>:<system specific connection string> -->
+
+       
+  <repository>
+    <connection>scm:cvs:pserver:anoncvs@skadi.ens.fr:/var/lib/cvs:doelan</connection>
+    <url>http://skadi.ens.fr/cgi-bin/viewcvs.cgi/doelan/</url>
+  </repository>
+
+  <!-- any mailing lists for the project -->
+  <mailingLists>
+    <mailingList>
+      <name>doelan-list</name>
+      <subscribe>mailto:%64%6f%65%6c%61%6e%2d%6c%69%73%74%2d%73%75%62%73%63%72%69%62%65%40%6d%61%69%6c%6c%69%73%74%2e%62%69%6f%6c%6f%67%69%65%2e%65%6e%73%2e%66%72</subscribe>
+      <unsubscribe>mailto:%64%6f%65%6c%61%6e%2d%6c%69%73%74%2d%75%6e%73%75%62%73%63%72%69%62%65%40%6d%61%69%6c%6c%69%73%74%2e%62%69%6f%6c%6f%67%69%65%2e%65%6e%73%2e%66%72</unsubscribe>
+      <!--<subscribe>mailto:doelan-subscribe@maillist.biologie.ens.fr</subscribe>
+      <unsubscribe>mailto:doelan-unsubscribe@maillist.biologie.ens.fr</unsubscribe>-->
+      <archive>https://maillist.biologie.ens.fr/wws/arc/doelan-list</archive>
+    </mailingList>
+  </mailingLists>
+
+  
+  <!-- who the developers are for the project -->
+  <developers>
+    <developer>
+      <name>Laurent Jourdren</name>
+      <id>jourdren</id>
+      <!--<email></email>-->
+      <organization>Plateforme Transcriptome du Département de Biologie - École Normale Supérieure</organization>
+      <organisationUrl>http://transcriptome.ens.fr/sgdb/presentation/people.php</organisationUrl>
+      <roles>
+        <role>Développeur</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+  </developers>
+
+  <contributors>
+    <contributor>
+      <name>Stéphane Le Crom</name>
+      <!--<email></email>-->
+      <!--<email>see http://transcriptome.ens.fr/sgdb/presentation/people.php</email>-->
+      <organization>Plateforme Transcriptome du Département de Biologie - École Normale Supérieure</organization>
+      <organisationUrl>http://transcriptome.ens.fr/sgdb/presentation/people.php</organisationUrl>
+      <roles>
+        <role>Bioinformatic responsible</role>
+      </roles>
+      <timezone>1</timezone>
+    </contributor>
+    <contributor>
+      <name>Corrine Blugeon</name>
+      <!--<email></email>-->
+      <organization>Plateforme Transcriptome du Département de Biologie - École Normale Supérieure</organization>
+      <organisationUrl>http://transcriptome.ens.fr/sgdb/presentation/people.php</organisationUrl>
+      <roles>
+        <role>Tester</role>
+      </roles>
+      <timezone>1</timezone>
+    </contributor>
+    <contributor>
+      <name>Fanny Coulpier</name>
+      <!--<email></email>-->
+      <organization>Plateforme Transcriptome du Département de Biologie - École Normale Supérieure</organization>
+      <organisationUrl>http://transcriptome.ens.fr/sgdb/presentation/people.php</organisationUrl>
+      <roles>
+        <role>Tester</role>
+      </roles>
+      <timezone>1</timezone>
+    </contributor>
+    <contributor>
+      <name>Frédéric Devaux</name>
+      <!--<email></email>-->
+      <organization>Plateforme Transcriptome du Département de Biologie - École Normale Supérieure</organization>
+      <organisationUrl>http://transcriptome.ens.fr/sgdb/presentation/people.php</organisationUrl>
+      <roles>
+        <role>Tester</role>
+      </roles>
+      <timezone>1</timezone>
+    </contributor>
+    <contributor>
+      <name>Véronique Tanty</name>
+      <!--<email></email>-->
+      <organization>Plateforme Transcriptome du Département de Biologie - École Normale Supérieure</organization>
+      <organisationUrl>http://transcriptome.ens.fr/sgdb/presentation/people.php</organisationUrl>
+      <roles>
+        <role>Tester</role>
+      </roles>
+      <timezone>1</timezone>
+    </contributor>
+  </contributors>
+
+
+  <!-- jar files the project is dependent on -->
+  <licenses>
+    <license>
+      <name>General Public Licence</name>
+      <url>http://www.gnu.org/licenses/gpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <dependencies>
+    <dependency>
+      <id>commons-collections</id>
+      <version>3.0</version>
+      <url>http://jakarta.apache.org/commons/</url>
+    </dependency>
+    <dependency>
+      <id>commons-primitives</id>
+      <version>1.0</version>
+      <url>http://jakarta.apache.org/commons/</url>
+    </dependency>
+    <dependency>
+      <id>dom4j</id>
+      <version>1.4</version>
+      <url>http://www.dom4j.org/</url>
+    </dependency>
+    <dependency>
+      <id>log4j</id>
+      <version>1.2.8</version>
+      <url>http://logging.apache.org/</url>
+    </dependency>
+    <dependency>
+      <id>commons-cli</id>
+      <version>1.0</version>
+      <url>http://jakarta.apache.org/commons/</url>
+    </dependency>
+    <dependency>
+      <groupId>netscape</groupId>
+      <artifactId>netscape</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>ens-transcriptome</groupId>
+      <artifactId>launcher</artifactId>
+      <version>1.0</version>
+      <url>http://www.transcriptome.ens.fr/launcher</url>
+    </dependency>
+    <dependency>
+      <groupId>ens-transcriptome</groupId>
+      <artifactId>nividic</artifactId>
+      <version>0.6</version>
+      <url>http://www.transcriptome.ens.fr/nividic</url>
+    </dependency>
+    <!-- docbook -->
+    <!--<dependency>
+      <groupId>maven-plugins</groupId>
+      <artifactId>maven-sdocbook-plugin</artifactId>
+      <version>1.4.1</version>
+      <type>plugin</type>
+      <url>http://maven-plugins.sourceforge.net/sdocbook</url>
+    </dependency>-->
+    <dependency>
+      <groupId>jfree</groupId>
+        <artifactId>jfreechart</artifactId>
+        <version>0.9.21</version>
+    </dependency>
+    <dependency>
+      <groupId>jfree</groupId>
+        <artifactId>jcommon</artifactId>
+        <version>0.9.6</version>
+    </dependency>
+    <dependency>
+      <groupId>jgoodies</groupId>
+        <artifactId>looks</artifactId>
+        <version>1.2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>xalan</groupId>
+        <artifactId>xalan</artifactId>
+        <version>2.6.0</version>
+	<properties>
+	  <classloader>root</classloader>
+	</properties>
+    </dependency>
+  </dependencies>
+  <!-- build information for the project -->
+
+  <build>
+    <!-- <nagEmailAddress>turbine-maven-dev@jakarta.apache.org</nagEmailAddress> -->
+
+    <nagEmailAddress>jourdren@biologie.ens.fr</nagEmailAddress>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
+    <unitTest>
+      <includes>
+        <include>**/*Test.java</include>
+      </includes>
+      <excludes>
+        <exclude>**/NaughtyTest.java</exclude>
+      </excludes>
+      <resources>
+        <resource>
+          <directory>src/test/files</directory>
+          <targetPath>files</targetPath>
+          <include>*</include>
+        </resource>
+      </resources>
+    </unitTest>
+    <resources>
+      <resource>
+        <directory>src/main/conf</directory>
+        <includes>
+          <include>*.properties</include>
+          <exclude>app.properties</exclude>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/java/files</directory>
+        <targetPath>files</targetPath>
+        <includes>
+          <include>*</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+  <reports>
+    <report>maven-jdepend-plugin</report>
+    <report>maven-checkstyle-plugin</report>
+    <report>maven-changes-plugin</report>
+    <!--<report>maven-changelog-plugin</report>
+    <report>maven-file-activity-plugin</report>
+    <report>maven-developer-activity-plugin</report>
+    <report>maven-statcvs-plugin</report>-->
+    <report>maven-javadoc-plugin</report>
+    <report>maven-jxr-plugin</report>
+    <report>maven-junit-report-plugin</report>
+    <report>maven-tasklist-plugin</report>
+    <report>maven-pmd-plugin</report>
+    <report>maven-simian-plugin</report>
+    <report>maven-faq-plugin</report>
+    <report>maven-license-plugin</report>
+    <!--<report>maven-linkcheck-plugin</report>-->
+  </reports>
+</project>

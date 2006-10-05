@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+<document>
+
+  <properties>
+    <title>Doelan tests</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+    <section name="Test in Doelan">
+    
+    <p>Doelan is bundled with many tests.  However, you can add your own test to Doelan thanks to the Doelan plugin system. The <a href="writing-plugin.html">writing a plugin page</a> learns you how to do this. </p>
+    
+    </section>  
+    
+    <section name="Built-in Test in Doelan">
+    
+    <p>The Doelan builtins tests can play with various features of the chips such spots diameter, spots flags, spots heterogeneity, saturated pixels of the spots...</p>
+    
+    <p>Here is the list of the built-in tests, click on a test to display documentation on parameters:</p>
+
+    <ul>
+      <li>
+        <p><b>Unit tests</b></p>
+	<table>
+	  <tr><th>Test name</th><th>Description</th></tr>
+	  <tr><td><a href="test-DoelanConfigure.html">DoelanConfigure</a></td><td>Configure global parameters for the TestSuite</td></tr>
+	  <tr><td><a href="test-BadFeatureTest.html">BadFeature</a></td><td>Test for bad feature flag (Genepic flag=-100)</td></tr>
+	  <tr><td><a href="test-AbsentFeatureTest.html">AbsentFeature</a></td><td>Test for absent feature flag (Genepix flag=-75)</td></tr>
+	  <tr><td><a href="test-NotFoundFeatureTest.html">NotFoundFeature</a></td><td>Test for not found feature flag (Genepix flag=-50)</td></tr>
+	  <tr><td><a href="test-HeterogeneousFeatureTest.html">HeterogeneousFeature</a></td><td>Test for heterogeneous spots</td></tr>
+	  <tr><td><a href="test-SaturatedPixelsTest.html">SaturatedPixels</a></td><td>Test for saturated spots</td></tr>
+	  <tr><td><a href="test-MinimalIntensityTest.html">MinimalIntensity</a></td><td>Test for minimal spot intensity</td></tr>
+	  <tr><td><a href="test-MaxDiameterFeatureTest.html">MaxDiameterFeature</a></td><td>Test maximal diameter of spots</td></tr>
+	  <tr><td><a href="test-MinDiameterFeatureTest.html">MinDiameterFeature</a></td><td>Test minimal diameter of spots</td></tr>
+	  <tr><td><a href="test-GenericTest.html">GenericTest</a></td><td>Generic test to test any column of a GPR file</td></tr>
+	</table>
+	<br/>
+      </li>
+      <li>
+        <p><b>Global tests</b></p>
+	<table>
+	  <tr><th>Test name</th><th>Description</th></tr>
+	  <tr><td><a href="test-GlobalMaxBadFeaturesTest.html">GlobalMaxBadFeatures</a></td><td>Global test to count rejected spots</td></tr>
+	  <tr><td><a href="test-GlobalMaxBadFeaturesRemovedTest.html">GlobalMaxBadFeaturesRemoved</a></td><td>Global test to count removed spots from output file</td></tr>
+	</table>
+	<br/>
+      </li>
+      <li>
+        <p><b>Special</b></p>
+	<table>
+	  <tr><th>Test name</th><th>Description</th></tr>
+	  <tr><td><a href="test-DoelanConfigure.html">DoelanConfigure</a></td><td>Configure global parameters for the TestSuite</td></tr>
+	</table>	
+      </li>
+    </ul>
+
+    
+    </section>  
+    
+    
+  </body>
+</document>

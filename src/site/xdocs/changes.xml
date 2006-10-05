@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="latin1"?>
+<document>
+  <properties>
+    <title>Page title</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+  <body>
+
+	<release version="1.0.1" date="2005-09-19">
+	  <action dev="jourdren" type="fix">
+       Change the size of maximun memory allocated by the jvm to 256 MB.
+      </action>
+    </release>
+
+    <release version="1.0.1" date="2005-09-19">
+      <action dev="jourdren" type="add">
+       Add information about empty spot in the report.
+      </action>
+	  <action dev="jourdren" type="fix">
+       Fix bug with empty spot in the arrayplot.
+      </action>
+      <action dev="jourdren" type="fix">
+       Fix bug with scrollbar in html documentation widget.
+      </action>
+      <action dev="jourdren" type="add">
+       An array description can be added in the report.
+      </action>
+      <action dev="jourdren" type="fix">
+       Fix bug with custom empty identifiers.
+      </action>
+      <action dev="jourdren" type="fix">
+       In minimal intensity test, the channel to test can be set.
+      </action>
+
+      
+    </release>
+    
+    <release version="1.0" date="2005-07-18">
+      <action dev="jourdren" type="fix">
+       Fix bug with logarithmic axis.
+      </action>
+    </release>
+
+    <release version="1.0-rc9" date="2005-04-15">
+      <action dev="jourdren" type="add">
+        Use a Pluggable Look And Feel from JGoodies looks under *nix.
+      </action>
+      <action dev="jourdren" type="add">
+        Add information pages (about test and documentation of a test) in contextual menu.
+      </action>
+      <action dev="jourdren" type="add">
+        New test: GenericTest, generic test for a column of GPR.
+      </action>
+      <action dev="jourdren" type="add">
+        New test: GlobalMaxBadFeaturesRemovedTest, count the maximal bad spots removed in a TestSuite
+      </action>
+      <action dev="jourdren" type="update">
+        In the output gal file, now, don't remove line but change the the identifier of the line
+        and add in the description field the reason of the reject of the spot.
+      </action>
+      <action dev="jourdren" type="update">
+        The arrayplot now show in white, feature which fail to one or more tests 
+        but doesn't be removed.
+      </action>  
+      <action dev="jourdren" type="update">
+        Reorganize the file hierachy of the application. 
+        Ready for online update of doelan when available.
+      </action>
+      <action dev="jourdren" type="add">
+        User can set the identifiers of the empty spots.
+      </action>
+      <action dev="jourdren" type="update">
+        Test identifiers are now in the same order in the TestSuite tab and this the report.
+      </action>
+      <action dev="jourdren" type="fix">
+        Bad result for spot heterogenity.
+      </action>
+      <action dev="jourdren" type="update">
+        Now use JFreechart to draw plot.
+      </action>
+    </release>
+
+    <release version="1.0-rc8" date="2005-04-15">
+      <action dev="jourdren" type="fix">
+        Fix bug for saving and printing report.
+      </action>
+      <action dev="jourdren" type="add">
+        Add a framework for global tests.
+      </action>
+      <action dev="jourdren" type="add">
+        New Global test: Count all the bad spots in a TestSuite. 
+      </action>
+      <action dev="jourdren" type="add">
+        Report tab: Show the manufactuer, the name and the revision of the array (informations from GAL file). 
+      </action>
+      <action dev="jourdren" type="add">
+        Report tab: Add a line in summary section of the report which show the final result of the TestSuite. :-) 
+      </action>
+      <action dev="jourdren" type="update">
+        Use now romde 0.6-CVS.
+      </action>
+      <action dev="jourdren" type="update">
+        Majors changes in romde workflow organization. Now an algorithm before generating the report runs all the globals. Add useful methods to get romde data object from Romde platform container.
+      </action>
+    </release>
+
+
+    <release version="1.0-rc7" date="2005-04-11">
+      <action dev="jourdren" type="fix">
+        Fix huge memory usage by BioAssay Objects in Romde.
+      </action>
+      <action dev="jourdren" type="update">
+        ArrayPlot use margin with.
+      </action>
+      <action dev="jourdren" type="update">
+        Update maven configuration files.
+      </action>
+      <action dev="jourdren" type="fix">
+        Fix Graphics plots.
+      </action>
+    </release>
+
+    <release version="1.0-rc6">
+      <action dev="jourdren" type="add">
+        Initial realease in CVS.
+      </action>   
+	  <action dev="jourdren" type="add">
+	    New Graph : Array visualisation.
+	  </action>
+	  <action dev="jourdren" type="fix">
+	    Safari problem.
+	  </action>
+	  <action dev="jourdren" type="fix">
+	    Windows sample plugin compilation script now works.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    Make a sample plugin : windows batch.
+	  </action>
+	  <action dev="jourdren" type="update">
+	    Make a logo and an icon.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    Modifier le script d'integration à Genepix pour qu'il affiche un message d'erreur quand il n'est pas executé dans Genepix.
+	  </action>
+	  <action dev="jourdren" type="fix">
+	    Change the name of the launcher.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    New Graph : Distribution graph.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    New test: Spot size.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    New test: Empty spot.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    New test: Heterogenous spot.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    New result output : HTML report.
+	  </action>      
+	  <action dev="jourdren" type="add">
+	    GUI : Save result array list button.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    GUI : Save report button.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    New array list output : GAL File.
+	  </action>
+	  <action dev="jourdren" type="fix">
+	    Change the background of the graph : lighter color
+	  </action>
+	  <action dev="jourdren" type="add">
+	    Show the TestSuite name in TestSuite tab and report tab
+	  </action>
+	  <action dev="jourdren" type="add">
+	    Show the units of the thresholds.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    Show the threshold on the graphs.
+	  </action>
+      <action dev="jourdren" type="add">
+        New test: Valid spotting.
+      </action>
+   	  <action dev="jourdren" type="update">
+   	    Polish Report tab
+   	  </action>
+	  <action dev="jourdren" type="add">
+	    GUI : Print report button.
+	  </action>
+	  <action dev="jourdren" type="fix">
+	    Clear TestSuite and result tab when start a workflow.
+	  </action>
+	  <action dev="jourdren" type="add">
+	    Make a sample plugin (jar + source in docs).
+	  </action>
+	  <action dev="jourdren" type="add">
+	    Add a progress bar.
+	  </action>      
+    </release>
+    
+  </body>
+</document>

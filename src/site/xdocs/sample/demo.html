@@ -1,0 +1,157 @@
+<!-- PRINT HEADER1 HERE --><html>
+<head>
+<title>Doelan Quality Test report </title>
+<!-- PRINT HEADER2 HERE --><style>body {font-size: 11px; font-family: sans-serif;}</style>
+<style>.fail {color: red;}</style>
+<style>.pass {color: green;}</style>
+<style>td {font-size: 11px; font-family: sans-serif;}</style>
+<style>th {font-size: 11px; font-family: sans-serif;}</style>
+<style>h1 {font-size: 20px; font-family: serif;}</style>
+<style>h2 {font-size: 14px; font-family: sans-serif;}</style>
+</head>
+<body>
+<a href="http://transcriptome.ens.fr/doelan"><IMG SRC="1120213790234_logo.jpeg" alt="Doelan logo"></a><h1 align="center"><u> Quality Test report</u></h1>
+<h2><b>Chip type: </b><i>Yeast</i><br><b>Test suite: </b><i>Self-hybridization</i></h2>
+<br><b>Report date: </b>01 July 2005 11:29:49<br><b>Scanned on:</b> 21 February 2005 11:47:58<br>
+<b>Scanned by:</b> GenePix 4000 (Emulated)<br>
+<b>Array name:</b> unknown<br>
+<b>Array revision:</b> unknown<br>
+<b>Manufacturer:</b> unknown<br>
+<b>Doelan version: </b>1.0<br><b>Doelan compilation date:</b> 01 July 2005 09:36:45<br><h2>Summary</h2>
+<hr>
+<table border="1">
+<tr><th>Test name</th><th>Description</th><th>635</th><th>532</th><th>Threshold</th><th>Result 635</th><th>Result 532</th><th>Global Result</th></tr><tr><td><a href="#test_0">Saturated pixels</a></td><td>Test saturated pixels of spots</td><td>0.00 %</td><td>0.00 %</td><td>&lt;= 10.00 %</td><td class="pass">Pass</td><td class="pass">Pass</td><td class="pass">Pass</td></tr>
+<tr><td><a href="#test_1">Heterogeneity</a></td><td>Test Heterogeneity of features</td><td>26.85 %</td><td>28.79 %</td><td>&lt;= 10.00 %</td><td class="fail">Fail</td><td class="fail">Fail</td><td class="fail">Fail</td></tr>
+<tr><td><a href="#test_2">Abscent flag</a></td><td>Test for absent feature flag (Flag=-75)</td><td colspan="2">0.00 %</td><td>&lt;= 5.00 %</td><td colspan="2"></td><td class="pass">Pass</td></tr>
+<tr><td><a href="#test_3">Minimal diameter</a></td><td>Test minimal diameter of features</td><td colspan="2">18.94 %</td><td>&lt;= 10.00 %</td><td colspan="2"></td><td class="fail">Fail</td></tr>
+<tr><td><a href="#test_4">Maximal diameter</a></td><td>Test maximal diameter of features</td><td colspan="2">0.29 %</td><td>&lt;= 10.00 %</td><td colspan="2"></td><td class="pass">Pass</td></tr>
+<tr><td><a href="#test_5">Not found feature</a></td><td>Test for not found feature flag (Flag=-50)</td><td colspan="2">1.02 %</td><td>&lt;= 7.00 %</td><td colspan="2"></td><td class="pass">Pass</td></tr>
+<tr><td><a href="#test_6">Minimal intensity</a></td><td>Test if the spots have the required minimal intensity</td><td colspan="2">0.06 %</td><td>&lt;= 10.00 %</td><td colspan="2"></td><td class="pass">Pass</td></tr>
+<tr><td><a href="#test_7">Bad spots</a></td><td>Count the maximal bad spots in a test suite</td><td colspan="2">47.89 %</td><td>&lt;= 10.00 %</td><td colspan="2"></td><td class="fail">Fail</td></tr>
+<tr><td><a href="#test_8">Bad spots removed</a></td><td>Count the maximal bad spots removed in a test suite</td><td colspan="2">47.89 %</td><td>&lt;= 10.00 %</td><td colspan="2"></td><td class="fail">Fail</td></tr>
+</table><br><b>Test suite result:</b> <b class="fail">Fail</b><br><br>
+<b>New output Array list:</b> <b class="pass">Yes</b><br>
+<b>New Array list generator message:</b> The output array contains 8064 features of the 8064 features of the original file.<br><b>Empty features:</b> 3862<br>
+<b>Real features:</b> 4202<br>
+<b>Total features:</b> 8064<br>
+<h2>Tests</h2>
+<hr>
+<a name="Saturated pixels" id="test_0"></a><h3>Test: Saturated pixels</h3>
+<ul>
+<li><b>Description:</b> Test saturated pixels of spots</li>
+<li><b>Test module:</b> SaturatedPixelsTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Maximal threshold of bad spots: <i>10.0 %</i></li>
+<li>Threshold maximum saturated pixels: <i>1 %</i></li>
+<li>Remove bad spots from output array list: <i>Yes</i></li>
+</ul>
+<li><b>Result 635 channel : </b><b class="pass">Pass</b></li>
+<li><b>Result 532 channel:</b> <b class="pass">Pass</b></li>
+<li><b>Comment:</b> <br>Features with invalid saturated pixels in 532 : 0/8064 features (threshold: 806 features)<br>Features with invalid saturated pixels in 635: 0/8064 features (threshold: 806 features)</li>
+</ul>
+<a name="Heterogeneity" id="test_1"></a><h3>Test: Heterogeneity</h3>
+<ul>
+<li><b>Description:</b> Test Heterogeneity of features</li>
+<li><b>Test module:</b> HeterogeneousFeatureTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Minimal value of standard deviation: <i>500</i></li>
+<li>Maximal threshold of bad spots: <i>10.0 %</i></li>
+<li>Remove bad spots from output array list: <i>Yes</i></li>
+</ul>
+<li><b>Result graph:</b><br><br><IMG SRC="1120213790234_Heterogeneity.jpeg" alt="result graph image"><br><br></li>
+<li><b>Result 635 channel : </b><b class="fail">Fail</b></li>
+<li><b>Result 532 channel:</b> <b class="fail">Fail</b></li>
+<li><b>Comment:</b> <br>Heterogeneous features in 532: 2322/8064 features (threshold: 806 features)<br>Heterogeneous features in 635 : 2165/8064 features (threshold: 806 features)</li>
+</ul>
+<a name="Abscent flag" id="test_2"></a><h3>Test: Abscent flag</h3>
+<ul>
+<li><b>Description:</b> Test for absent feature flag (Flag=-75)</li>
+<li><b>Test module:</b> AbsentSpotTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Maximal threshold of bad spots: <i>5.0 %</i></li>
+<li>Remove bad spots from output array list: <i>Yes</i></li>
+</ul>
+<li><b>Result:</b> <b class="pass">Pass</b></li>
+<li><b>Comment:</b> <br>Abscent features: 0/8064 features (threshold: 403 features)</li>
+</ul>
+<a name="Minimal diameter" id="test_3"></a><h3>Test: Minimal diameter</h3>
+<ul>
+<li><b>Description:</b> Test minimal diameter of features</li>
+<li><b>Test module:</b> MinDiameterFeatureTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Minimal diameter value: <i>80 µm</i></li>
+<li>Maximal threshold of bad spots: <i>10.0 %</i></li>
+<li>Remove bad spots from output array list: <i>Yes</i></li>
+</ul>
+<li><b>Result graph:</b><br><br><IMG SRC="1120213790234_Minimal diameter.jpeg" alt="result graph image"><br><br></li>
+<li><b>Result:</b> <b class="fail">Fail</b></li>
+<li><b>Comment:</b> <br>Bad diameter features: 1527/8064 features (threshold: 806 features)</li>
+</ul>
+<a name="Maximal diameter" id="test_4"></a><h3>Test: Maximal diameter</h3>
+<ul>
+<li><b>Description:</b> Test maximal diameter of features</li>
+<li><b>Test module:</b> MaxDiameterFeatureTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Maximal diameter value: <i>140 µm</i></li>
+<li>Maximal threshold of bad spots: <i>10.0 %</i></li>
+<li>Remove bad spots from output array list: <i>Yes</i></li>
+</ul>
+<li><b>Result graph:</b><br><br><IMG SRC="1120213790234_Maximal diameter.jpeg" alt="result graph image"><br><br></li>
+<li><b>Result:</b> <b class="pass">Pass</b></li>
+<li><b>Comment:</b> <br>Bad diameter features: 23/8064 features (threshold: 806 features)</li>
+</ul>
+<a name="Not found feature" id="test_5"></a><h3>Test: Not found feature</h3>
+<ul>
+<li><b>Description:</b> Test for not found feature flag (Flag=-50)</li>
+<li><b>Test module:</b> NotFoundTestFeatureTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Maximal threshold of bad spots: <i>7.0 %</i></li>
+<li>Remove bad spots from output array list: <i>Yes</i></li>
+</ul>
+<li><b>Result:</b> <b class="pass">Pass</b></li>
+<li><b>Comment:</b> <br>Not found features: 82/8064 features (threshold: 564 features)</li>
+</ul>
+<a name="Minimal intensity" id="test_6"></a><h3>Test: Minimal intensity</h3>
+<ul>
+<li><b>Description:</b> Test if the spots have the required minimal intensity</li>
+<li><b>Test module:</b> ValidSpotingTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Minimal spot intensity: <i>50</i></li>
+<li>Maximal threshold of bad spots: <i>10.0 %</i></li>
+<li>Remove bad spots from output array list: <i>Yes</i></li>
+</ul>
+<li><b>Result graph:</b><br><br><IMG SRC="1120213790234_Minimal intensity.jpeg" alt="result graph image"><br><br></li>
+<li><b>Result:</b> <b class="pass">Pass</b></li>
+<li><b>Comment:</b> <br>Features with invalid invalid intensity : 5/8064 features (threshold: 806 features)<br></li>
+</ul>
+<a name="Bad spots" id="test_7"></a><h3>Test: Bad spots</h3>
+<ul>
+<li><b>Description:</b> Count the maximal bad spots in a test suite</li>
+<li><b>Test module:</b> GlobalMaxBadFeaturesTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Maximal threshold of bad spots: <i>10.0 %</i></li>
+</ul>
+<li><b>Result:</b> <b class="fail">Fail</b></li>
+<li><b>Comment:</b> <br>Bad diameter features: 3862/8064 features (threshold: 806 features)</li>
+</ul>
+<a name="Bad spots removed" id="test_8"></a><h3>Test: Bad spots removed</h3>
+<ul>
+<li><b>Description:</b> Count the maximal bad spots removed in a test suite</li>
+<li><b>Test module:</b> GlobalMaxBadFeaturesRemovedTest</li>
+<li><b>Parameters:</b> 
+<ul>
+<li>Maximal threshold of bad spots: <i>10.0 %</i></li>
+</ul>
+<li><b>Result:</b> <b class="fail">Fail</b></li>
+<li><b>Comment:</b> <br>Bad diameter features: 3862/8064 features (threshold: 806 features)</li>
+</ul>
+<br><hr><a href='http://transcriptome.ens.fr/doelan'>Doelan</a> 1.0, Copyright 2004-2005 <a href="http://www.transcriptome.ens.fr/">École Normale Supérieure Microarray Platform</a>.
+<!-- PRINT COMMAND HERE --></body></html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+<document>
+
+  <properties>
+    <title>Screenshots</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+    <section name="Screenshots">
+    
+    <p>This is some screenshots of Doelan on several operating systems:</p>
+    <ul>
+      <li>Main tab of Doelan.<br/>
+      <a href="images/screenshots/screenshot1.png"><img src="images/screenshots/screenshot1-33.png" /></a>
+      </li>
+      <br/>
+      <li> Test suite tab of Doelan.<br/>
+      <a href="images/screenshots/screenshot2.png"><img src="images/screenshots/screenshot2-33.png"/></a>
+      </li>
+      <br/>
+      <li>Result tab of Doelan.<br/>
+      <a href="images/screenshots/screenshot3.png"><img src="images/screenshots/screenshot3-33.png"/></a>
+      </li>
+      <br/>
+      <li>Doelan with Genepix integration (Windows XP).<br/>
+      <a href="images/screenshots/screenshot4.png"><img src="images/screenshots/screenshot4-33.png"/></a>
+      </li>
+      <br/>
+      <li><a href="sample/demo.html">Sample of Doelan report</a>.</li>
+      <br/>
+    </ul>
+    
+    </section>  
+    
+  </body>
+</document>

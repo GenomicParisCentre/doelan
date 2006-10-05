@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+
+<document>
+
+  <properties>
+    <title>People behind Doelan</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+    <section name="People behind Doelan">
+    
+      <p>Doelan is developed by the bioinformatic team of the microarray platform at the École Normale Supérieure:</p>
+   
+      <table>
+        <tr><th>Name</th><th>Work</th></tr>
+        <tr><td>Claude Jacq</td><td>Transcriptome platform head responsible</td></tr>
+        <tr><td>Stéphane Le Crom</td><td>Bioinformatic responsible and Doelan testing</td></tr>
+        <tr><td>Laurent Jourdren</td><td>Doelan design and coding</td></tr>
+      </table>
+
+     <p>Special thanks to:</p>
+
+     <table>
+       <tr><th>Name</th><th>Work</th></tr>
+       <tr><td>Corinne Blugeon, Fanny Coulpier, Frédéric Devaux and Véronique Tanty</td><td>For Doelan testing</td></tr>
+       <tr><td>Charles Hébert</td><td>For the new logo</td></tr>
+     </table>
+    </section>  
+    
+    <section name="Contact">
+    
+    
+    <p>Who can you contact if you have any question:</p>
+    <ul>
+      <li>The <a href="mail-lists.html">Doelan users mailing list</a> for comments, helps, bugs, sugestions, helps about writing Doelan new features and plugins or anything else about using Doelan.</li>
+      <br/>
+      <!-- mailto:doelan@biologie.ens.fr  -->
+      <li>The <a href="mailto:%64%6f%65%6c%61%6e%40%62%69%6f%6c%6f%67%69%65%2e%65%6e%73%2e%66%72">author</a> for other questions about Doelan.</li>
+      <!-- mailto:webmaster-transcriptome@biologie.ens.fr  -->
+      <li>The <a href="mailto:%77%65%62%6d%61%73%74%65%72%2d%74%72%61%6e%73%63%72%69%70%74%6f%6d%65%40%62%69%6f%6c%6f%67%69%65%2e%65%6e%73%2e%66%72">webmaster</a> for questions about the Doelan website.</li>
+      <li>The <a href="http://transcriptome.ens.fr/sgdb/presentation/people.php">contact page</a> of the microarray platform of the École Normale Supérieure for questions concerning our platform.</li>
+    </ul>
+
+    <p>You can also visits our microarray platform <a href="http://transcriptome.ens.fr/sgdb">website</a>.</p>
+    
+    </section>  
+    
+  </body>
+</document>

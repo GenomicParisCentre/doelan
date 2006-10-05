@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="latin1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+
+<faqs title="Frequently Asked Questions">
+
+  <part id="general">
+    <title>General</title>
+
+    <p>No questions.</p>
+
+    <faq id="whats-doelan">
+      <question>
+        What is Doelan?
+      </question>
+      <answer>
+        <p>Doelan is an automated tool to check the quality of produced DNA microarrays. This software is based on the execution of parameted testsuites on quality control data to validate batches of chips. This software will helps microarray platforms in their quality approach such as ISO 9001 certification.</p>
+      </answer>
+    </faq>
+
+  </part>
+
+
+</faqs>

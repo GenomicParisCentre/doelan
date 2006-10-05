@@ -1,0 +1,67 @@
+body, p, table, td, th, ul, li, dd, dt, dl, h1, h2, h3, h4, h5, h6, div, span, input
+{
+    font-family: "Trebuchet MS", Times, serif;
+    line-height: 18px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-weight: normal;
+    line-height: 24px;
+}
+
+p, ul, li, dt, dd, dl, table, td, th, #breadcrumbs, div, input, textarea
+{
+    font-size: 14px;
+}
+
+img
+{
+    border: 0;
+}
+
+h2
+{
+    border-bottom: 1px solid;
+    font-family: "Arial", Times, serif;
+    font-weight:bold;
+    
+}
+
+h3
+{
+    font-weight: bold;
+    font-style:italic;
+}
+
+blockquote
+{
+    border: 2px dotted;
+}
+
+p
+{
+    padding: 0 10px 0 10px;
+}
+
+table {
+  padding:0px;
+  width: 100%;
+  margin-left: -2px;
+  margin-right: -2px;
+} 
+
+td, th
+{
+    /*border: 1px solid;*/
+    padding: 4px;
+}
+
+pre
+{
+    padding-left: 20px;
+    /* ajout par laurent jourdren*/
+    border-style: dashed;
+    border-width: 1px;
+    background: #f0f0f0; 
+}

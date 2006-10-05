@@ -1,0 +1,73 @@
+<document>
+  <properties>
+    <title>Download Doelan 1.0.1</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+  <body>
+    <section name="Download Doelan latest version">
+      <p>
+        Doelan is distributed in several formats for your convenience.
+      </p>
+      <ul>
+        <li>
+          <a href="/sgdb/download.php?ref=lbdl/doelan-1.0.1.tar.gz">
+            <code>.tar.gz</code> archive
+          </a>
+          <span style="font-size: smaller">
+	    (5.4 MiB)
+            <!--(
+            <a href="http://www.transcriptome.ens.fr/sgdb/download.php?doelan/doelan-1.0-rc8-bin.tar.gz.md5">checksum</a>)
+            (
+            <a href="http://www.transcriptome.ens.fr/sgdb/download.php?doelan/doelan-1.0-rc8-bin.tar.gz.asc">PGP</a>)-->
+          </span>
+        </li>
+        <li>
+          <a href="/sgdb/download.php?ref=lbdl/doelan-1.0.1.zip">
+            <code>.zip</code> archive
+          </a>
+          <span style="font-size: smaller">
+	    (5.9 MiB)
+            <!--(
+            <a href="http://www.transcriptome.ens.fr/sgdb/download.php?doelan/doelan-1.0-rc8-bin.zip.md5">checksum</a>)
+            (
+            <a href="http://www.transcriptome.ens.fr/sgdb/download.php?doelan/doelan-1.0-rc8-bin.zip.asc">PGP</a>)-->
+          </span>
+        </li>
+      </ul>
+      <p>
+        Doelan is distributed under the
+        <a href="license.html">General Public License</a>.
+      </p>
+      <a name="requirements"/>
+      <subsection name="System Requirements">
+        <table>
+	  <tr>
+	    <th>Component</th>
+	    <th>Comment</th>
+	  </tr>
+          <tr>
+            <td>Java Runtime Environment</td>
+            <td>1.4 or above (Dolean might run under Java 5.0 but no test has been realized). </td>
+          </tr>
+          <tr>
+            <td>Memory</td>
+            <td>No minimum requirement. The necessary amount of memory needed by Doelan depends on size of the files to be tested. Currently with GPR and GAL files greater than 20,000 lines, Doelan doesn't need to modify the memory allocation pool size (default is 64 MiB) with the <b>-Xmx</b> option of the JVM.</td>
+          </tr>
+          <tr>
+            <td>Disk Space</td>
+            <td>
+              No minimum requirement. Approximately 11 MiB will be used by Doelan.
+            </td>
+          </tr>
+          <tr>
+            <td>Operating System</td>
+            <td>
+              No minimum requirement. Tested on Windows XP, Debian testing and Mac OS X.
+            </td>
+          </tr>
+        </table>
+      </subsection>
+    </section>
+  </body>
+</document>
+

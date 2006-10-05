@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+<document>
+
+  <properties>
+    <title>Minimal Intensity feature test</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+    <section name="Minimal Intensity feature test">
+    
+    <subsection name="Description">
+    
+    <p>The aim of this test is to reject all spots with a too low intensity. This Doelan test use the 635 foreground intensity (Genepix <b>F635 Median</b> column) and the 532 foreground intensity (Genepix <b>F532 Median</b> column). This test works only woth GPR Files.</p>
+    
+    </subsection>
+    
+    <subsection name="Parameters">
+    
+    <ul>      
+      <li><b>Minimal spot intensity</b>: The mininum value of the intensity in each color for a spot to be not excluded.</li>
+      <li><b>Channel to test</b>: The channel(s) to test (red, green or both).</li>
+      <li><b>Maximal threshold of bad spots</b>: The threshold in percent of invalid spots to reject the test. In the count, empty and abscent spots aren't considered.</li>
+      <li><b>Remove bad spot from the output list</b>: If enabled, spots which don't pass the test will be removed in output arraylist file.</li>
+    </ul>
+    
+    </subsection>
+    
+    <subsection name="Graphics">
+    
+    <p>This test will generate two graphics (one for each color) showing the distribution of   intensities of the spots.</p>
+    
+    </subsection>
+            
+    </section>  
+    
+  </body>
+</document>

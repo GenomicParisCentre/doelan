@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+ -->
+
+<document>
+
+  <properties>
+    <title>Creating new plugins for doelan</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+ <section name="Writing your own test">
+   <title/>
+   
+   <p>This section how to writing a simple plugin. In this example, we will create a test which filter spots with flag value at notfound. There is only one requirement to produce a functional plugin: it must contains one or more (a plugin can have more than one test) class witch extends <code>QualityUnitTest()</code> and implements the <code>Module()</code> interface.</p>
+   
+   <p>The <code>Module()</code> interface force the developer to describe the module he want to add to doelan.</p>
+   <p>The abstract <code>QualityUnitTest()</code> impose you to set the parameters (name, type and default value) of test and wrinting a <code>test()</code> witch do the job.</p>
+   
+   <p>The end of this section show you the annoted code of a test filtering spots with flag value at notfound. You'll find the source of this plugin and scripts to build it in the <filename moreinfo="none">doc/plugin</filename> directory of doelan.</p>
+ 
+<source>
+// Import Unit test class
+import fr.ens.transcriptome.doelan.algorithms.QualityUnitTest;
+
+// Import Result test classes
+import fr.ens.transcriptome.doelan.data.QualityUnitTestResult;
+import fr.ens.transcriptome.doelan.data.QualityUnitTestResult.SummaryResult;
+
+// Import Module management classes
+import fr.ens.transcriptome.nividic.platform.module.AboutModule;
+import fr.ens.transcriptome.nividic.platform.module.Module;
+import fr.ens.transcriptome.nividic.platform.module.ModuleDescription;
+import fr.ens.transcriptome.nividic.platform.PlatformException;
+
+// Import of the classes for handling bioassays
+import fr.ens.transcriptome.nividic.om.BioAssay;
+import fr.ens.transcriptome.nividic.om.SpotIterator;
+
+// Import of the classes for handling parameters in a module
+import fr.ens.transcriptome.nividic.util.parameter.FixedParameters;
+import fr.ens.transcriptome.nividic.util.parameter.Parameter;
+import fr.ens.transcriptome.nividic.util.parameter.ParameterBuilder;
+import fr.ens.transcriptome.nividic.util.parameter.ParameterException;
+import fr.ens.transcriptome.nividic.util.parameter.Parameters;
+
+/**
+ * Plugin Sample Test.
+ * This class define a test based on not found spot flags.
+ * @author Laurent Jourdren
+ */
+public class PluginSampleTest extends QualityUnitTest implements Module {
+
+  /**
+   * Get the description of the module.
+   * The <code>aboutModule()</code> method allow to describe the test for the 
+   * user in the doelan interface.
+   * @return The description of the module
+   */
+  public AboutModule aboutModule() {
+
+    ModuleDescription md = null;
+    try {
+      md = new ModuleDescription("PluginSampleTest",
+          "Plugin sample Test : Test not found spot flag for BioAssay");
+    } catch (RomdePlatformException e) {
+      getLogger().error("Unable to create the module description");
+    }
+    return md;
+  }
+
+  /**
+   * Set the parameters of the element.
+   * The <code>defineParameters()</code> method allow to describe the type, 
+   * the defaults values and the range of all parameters of the test. 
+   * If the user enter enter in Doelan an out of range parameter, the 
+   * message will tell him that parameter is wrong.
+   * @return The defaults parameters to set.
+   */
+  protected Parameters defineParameters() {
+
+    try {
+
+      final Parameter threshold = new ParameterBuilder().withName("Threshold")
+          .withType(Parameter.DATATYPE_DOUBLE).withDescription(
+              "Threshold for the test").withGreaterThanValue(0)
+              .withDefaultValue("0.10").getParameter();
+      final Parameter filterFlags = new ParameterBuilder().withName(
+              "Filter flags").withType(Parameter.DATATYPE_BOOLEAN)
+              .withDescription(
+              "Filter invalid features in output arraylist file")
+              .withDefaultValue("false").getParameter();
+
+      final FixedParameters params = new FixedParameters();
+      params.addParameter(threshold);
+      params.addParameter(filterFlags);
+
+      return params;
+
+    } catch (ParameterException e) {
+      System.err.println(e);
+    }
+
+    return null;
+  }
+
+  /**
+   * Test the quality of the bioassay.
+   * @param bioassay BioAssay to test
+   * @param arrayList The array list
+   * @param parameters parameters of the test
+   * The test() method is the main function of the test. There, the test will be executed.
+   * @return A QualityObjectResultTest Object
+   * @throws PlatformException if an error occurs while executing 
+   * the test.
+   */
+  public QualityUnitTestResult test(final BioAssay bioassay,
+      final BioAssay arrayList, final Parameters parameters)
+      throws PlatformException {
+
+    QualityUnitTestResult result = null;
+
+    try {
+
+      final boolean[] results = new boolean[bioassay.size()];
+      final int[] flags = bioassay.getFlags();
+
+      // Get the user parameters values
+      final double threshold = parameters.getParameter("Threshold")
+                               .getDoubleValue();
+      final boolean filterFlags = parameters.getParameter("Filter flags")
+                                  .getBooleanValue();
+
+      int countNotFound = 0;
+      int countRealSpot = 0;
+
+      // Iterate over the bioassay to test all the flags of the spots
+      SpotIterator si = bioassay.iterator();
+
+      while (si.hasNext()) {
+        si.next();
+
+        if (si.isEmpty() || si.isFlagAbscent())
+          continue;
+
+        // If the flag of spot is not found, the spot if set to false in 
+	// the results array and will not be in the output gal file
+        if (si.getFlag() == BioAssay.FLAG_NOT_FOUND)
+          countNotFound++;
+        else
+          results[si.getIndex()] = true;
+    
+        countRealSpot++;
+      }
+      
+      
+      final double ratio = ((double) countNotFound) / ((double) countRealSpot);
+
+      // Set the result information in the result variable
+      result = new QualityUnitTestResult(bioassay, this);
+      result.setMessage("Not found flag features : " + countNotFound + " / "
+          + countRealSpot + " max : " + (countRealSpot * threshold));
+
+      result.setGlobalResultType(true);
+      if (filterFlags) result.setNewFlags(results);
+      
+      SummaryResult rac = result.getResultAllChannels();
+      rac.setPercent(true);
+      rac.setThresholdEqualityType("&lt;=");
+      rac.setUnit("%");
+      rac.setThreshold(threshold);
+      rac.setValue(ratio);
+      rac.setPass(ratio &lt;= threshold);
+
+    } catch (ParameterException e) {
+      throw new PlatformException("Error while creating parameters ("
+          + this.getClass().getName() + ") : " + e.getMessage());
+    }
+
+    // Return the result
+    return result; 
+  }
+
+  //
+  // Constructor
+  //
+
+  /**
+   * Public constructor.
+   * @throws PlatformException If the name or the version of the element 
+   *         is null.
+   */
+  public PluginSampleTest() throws PlatformException {
+    // MUST BE EMPTY
+  }
+}
+  </source>
+ 
+  </section>
+  <section name="Compliation and installation of plugins">
+    <title/>
+    
+    <p>This section presents you the process of building a functionnal plugin after writing the source code. All the next steps are very common, you can easily script it (with ant, unix or Windows shell). In the next chapter you'll find two scripts (one for *nix and one for Windows) to automate the building of a simple plugin. Wrinting an Ant script will be useful if you consider to develop a large plugin.</p>
+    
+    <ul>
+      <li>In your source directory compile your plugin. You can use a makefile like Ant to automate the compilation of your sources.</li>
+      <li>Pack the generated <em>.class</em> file in a <em>.jar</em> file.</li>
+      <li>Copy your <em>.jar</em> in the Doelan <em>plugins</em> directory.</li>
+      <li>Restart Doelan.</li>
+      <li>Now, You can use your own test in the application.</li>
+    </ul>
+  </section>
+ 
+  <section name="Building the plugin sample">
+  
+  <p>This an script for building the <em>.jar</em> file of the plugin under *nix. Don't forget to replace <em>PATH_TO_DOELAN</em> by the valid path to Doelan on your filesystem in the script.</p>
+  <source>  
+#!/bin/sh
+
+DIRLIB=$PATH_TO_DOELAN/lib
+
+for LIB in `ls $DIRLIB`
+do
+  CLASSPATH=$DIRLIB/$LIB:$CLASSPATH
+done
+
+rm *.class *.jar
+javac -classpath $CLASSPATH *.java
+jar cf testplugin.jar *.class
+  </source>
+  
+  <p>This is the same script for Windows. It's a batch file, save into a text file and rename it with the <em>.bat</em> extension. Be careful under Windows, with the <em>CLASSPATH</em> and <em>PATH</em> environement variable, sometimes they are not set. See your Java documentation for more information.</p>
+  
+  <source>  
+del *.class
+del *.jar
+javac -classpath %CLASSPATH% *.java
+jar cf testplugin.jar *.class
+ 
+  </source>  
+    
+    </section>  
+    
+  </body>
+</document>

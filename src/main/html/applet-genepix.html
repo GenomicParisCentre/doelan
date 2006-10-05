@@ -1,0 +1,226 @@
+<html>
+  <head>
+    <title>Genepix Java Applet</title>
+    <script language="JavaScript">
+
+      var genepix = window.external;
+
+
+
+        if (genepix!=null) {
+        var results = genepix.Results;
+        if (results!=null) {
+          var scanner = genepix.Scanner;
+          var height = results.Height;
+          var width = results.width;
+        }
+      }
+
+      function genepixTest() {
+        if (genepix==null) document.write("This document only works in Genepix Report tab.</body></html>");
+      }
+
+      function isResults() {
+        if (results.height==0) return 0;
+        else return 1;
+      }
+
+      function getValueAt(type,i) {
+        return results.Value(i,type);
+      }
+
+      function getColumnName(i) {
+        return results.ColumnName(i);
+      }
+
+      function getArrayListName() {
+        return genepix.ArrayListName;
+      }
+
+      function getHeaders() {
+
+        nLaser = scanner.NumLasers;
+
+        // Type of ATF File
+        $txt = "Type=GenePix Result 3";
+
+        // DateTime
+        $date =  new Date(results.DateTime);
+        $txt = $txt + "\nDateTime=" +
+                $date.getYear() + "/" +
+                $date.getMonth() + "/" +
+                $date.getDate() + " " +
+                $date.getHours() + ":" +
+                $date.getMinutes() + ":" +
+                $date.getSeconds();
+
+        // Settings
+        $txt = $txt + "\nSettings=" + genepix.SettingsName;
+
+        // Gal File
+        $txt = $txt + "\nGalFile=" + genepix.ArrayListName;
+
+        // Pixel size
+        $txt = $txt + "\nPixelSize=" + results.PixelSize;
+
+        // Wave lengths
+        //TODO FIXME
+        $txt = $txt + "\nWavelengths=";
+        wls = genepix.Wavelengths;
+        for ($i=0;$i<nLaser;$i++) {
+          if ($i!=0) $txt = $txt + "\t";
+          $txt = $txt + wls[$i];
+        }
+
+        // Image Files
+        // FIXME : more than one file and must add a the path to the filenames
+        $txt = $txt + "\nImageFiles=" + genepix.ImageFileNames;
+
+        // Nomalisation method
+        $txt = $txt + "\nNormalisationMethod=" + results.NormalizationMethod;
+
+        // Normalisation factors
+        $txt = $txt + "\nNormalizationFactors=";
+        for ($i=0;$i<nLaser;$i++) {
+          if ($i!=0) $txt = $txt + "\t";
+          $txt = $txt + results.NormalizationFactor($i);
+
+        }
+
+        // Jpeg image
+        // FIXME : returns only the first jpeg ratio image.
+        $txt = $txt + "\nJpegImage=" + results.image(0);
+
+        // Standard deviation
+        $txt = $txt + "\nStdDev=";
+        if (results.StdDev2 == false) { $txt = $txt + "Type 1"; }
+        else { $txt = $txt + "Type 2"; }
+
+        // Ratio Formultation
+        // TODO
+        $txt = $txt + "\nRatioFormulation=" ;
+
+        // Feature type
+        // WARNING : New in 5.x,
+        // TODO : Test with older versions of genepix
+        // FIXME: Test if the values of field are corrects
+        switch (genepix.FeatureShape) {
+          case 0 : $txt = $txt + "\nFeatureType=Circular"; break;
+          case 1 : $txt = $txt + "\nFeatureType=Square"; break;
+          case 2 : $txt = $txt + "\nFeatureType=Irregular, Filled"; break;
+          case 1 : $txt = $txt + "\nFeatureType=Irregular, Not filled"; break;
+          default: break;
+        }
+
+        // Barcode
+        $txt = $txt + "\nBarcode=" + genepix.barcode;
+
+        // Background subtraction
+          $txt = $txt + "\nBackgroundSubtraction=" + results.BackgroundSubtractionMethod;
+
+        // Image origin
+        $txt = $txt + "\nImageOrigin=" + results.ImageOriginX + ", " + results.ImageOriginY;
+
+        // Jpeg origin
+        $txt = $txt + "\nJpegOrigin=" + results.JPEGOriginX + ", " + results.JPEGOriginY;
+
+        // Creator
+        $txt = $txt + "\nCreator=Genepix " + genepix.Version;
+
+        // Scanner
+        $txt = $txt + "\nScanner=" + scanner.Name;
+
+        // Focus Position
+        $txt = $txt + "\nFocusPosition=" + scanner.FocusPosition;
+
+        // Temperature
+        $txt = $txt + "\nTemperature=" + results.Temperature;
+
+        // Lines averaged
+        $txt = $txt + "\nLinesAveraged=" + scanner.LinesToAverage;
+
+        // Comment
+        $txt = $txt + "\nComment=" + results.Comment;
+
+        // PMT Gain
+        $txt = $txt + "\nPMTGain=";
+        for ($i=0;$i<nLaser;$i++) {
+          if ($i!=0) $txt = $txt + "\t";
+          $txt = $txt + scanner.PMT($i);
+        }
+
+        // Scan Power
+        $txt = $txt + "\nScanPower=";
+        for ($i=0;$i<nLaser;$i++) {
+          if ($i!=0) $txt = $txt + "\t";
+          $txt = $txt + scanner.Power($i);
+
+        }
+
+        // Laser Power
+        $txt = $txt + "\nLaserPower=";
+        for ($i=0;$i<nLaser;$i++) {
+          if ($i!=0) $txt = $txt + "\t";
+          $txt = $txt + results.LaserPower($i);
+
+        }
+
+        // Laser on time
+        $txt = $txt + "\nLaserOnTime=";
+        for ($i=0;$i<nLaser;$i++) {
+          if ($i!=0) $txt = $txt + "\t";
+          $txt = $txt + results.LaserOnTime($i);
+
+        }
+
+        // Filters
+        // FIXME :  I don't no how retreive this informations (only for Genepix 4100 and 4200)
+        $txt = $txt + "\nFilters=<Empty>\t<Empty>";
+
+        // Scan region
+        $value = results.ScanRegion;
+        $value = $value.substr(1, $value.length - 2);
+        tab = $value.split(" ");
+        $value = "";
+        for ($i=0;$i<tab.length;$i++) $value = $value + tab[$i];
+        $txt = $txt + "\nScanRegion="+ $value;
+
+        // Supplier
+        $txt = $txt + "\nSupplier=" + results.Supplier;
+
+        //document.write($txt);
+        return $txt;
+      }
+
+
+    </script>
+  </head>
+  <body >
+
+    <script language="JavaScript">
+        if (genepix==null || results==null) document.write("This document only works in Axon Genepix Report tab.</body></html>");
+    </script>
+
+    <object classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+                     width="800"
+                     height="600"
+                     align="baseline"
+                     codebase="http://java.sun.com/products/plugin/autodl/jinstall-1_4_2-windows-i586.cab#Version=1,4,2,0">
+      <param name="archive" value="lib\1.0\doelan-1.0.jar, lib\1.0\nividic-0.6.jar, lib\1.0\dom4j-1.4.jar, lib\1.0\commons-collections-3.0.jar, lib\1.0\commons-cli-1.0.jar, lib\1.0\commons-primitives-1.0.jar, lib\1.0\log4j-1.2.8.jar, lib\1.0\netscape.jar, lib\1.0\launcher-1.0.jar, lib\1.0\jfreechart-0.9.21.jar, lib\1.0\jcommon-0.9.6.jar">
+      <param name="name" value="fr.ens.transcriptome.doelan.GenepixApplet">
+      <param name="code" value="fr.ens.transcriptome.doelan.GenepixApplet">
+      <param name="type" value="application/x-java-applet;jpi-version=1.4.2">
+      <param name="scriptable" value="true">
+      No Java 2 SDK, Standard Edition v 1.4.2 support for APPLET!!!
+    </object>
+
+
+
+    <hr>
+    Doelan, Copyright 2004-2005 <a href="http://www.transcriptome.ens.fr">École normale Supérieure Microarray Platform</a>.
+
+
+
+
+  </body>
+</html>

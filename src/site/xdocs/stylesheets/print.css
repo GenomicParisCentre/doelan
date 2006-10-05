@@ -1,0 +1,35 @@
+#footer, #leftcol, #breadcrumbs, .docs #toc, .docs .courtesylinks, #leftColumn, #navColumn {
+	display: none;
+}
+
+p {
+	text-align: justify;
+}
+
+#bodyColumn, body.docs div.docs {
+	margin: 0 !important;
+	border: none !important;
+	top: 80px;
+	left: 0px;
+	right: 0;
+		
+}
+#banner
+{
+	background-image: none;
+	background-position: top left;
+	background-repeat: no-repeat;
+	height: 80px;
+}
+
+#organizationLogo {
+	float: right;
+	margin: 0px 0px 0px 0px;
+}
+
+#projectLogo {
+	float: left;
+	display: inline ;
+}
+
+		

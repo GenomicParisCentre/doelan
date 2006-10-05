@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+
+<document>
+
+  <properties>
+    <title>Installing Doelan</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+    
+    <section name="Standalone installation">
+     
+      <p>The installation of Doelan on all platform is quite similar and very easy. You don't need to be the administrator or the root user of your system to install Doelan.</p> 
+     
+      <p>The only tool you need to have is a zip extractor. A zip extract tool is included on Windows XP, Linux and Mac OS.</p>
+     
+      <p>If you are a user of Windows prior to XP, you can download <b>7-Zip</b> (7-Zip is a free software) at the following location <a href="http://www.7-zip.org/" target="_target">http://www.7-zip.org/</a>.</p>
+     
+      <ul>
+        <li><a href="download.html">Download Doelan</a> on our website</li>
+        <li>Unzip the archive where you want install the software</li>
+        <li>Doelan is ready to run.</li>
+      </ul>
+     
+      <!--<p>On *nix system and sometimes in Windows you need to set the <b>PATH</b> and <b>CLASSPATH</b> environnement variable to run Doelan.</p>-->
+
+   </section>
+
+   <a name="genepix"></a>
+   <section name="Installation for Genepix integration">
+     
+      <p>To configure Genepix integration of Genepix, you need to allow the Doelan applet in Genepix to read and write on your filesystem and set the path to the doelan report page in Genepix.</p>
+    
+      <subsection name="Modify Doelan Applet security permissions">
+      
+    
+        <p>To allow a normal execution of Doelan in Genepix, you need to modify the security permissions for the applet. Edit the <code>{JAVA_HOME}/lib/security/java.policy</code> and add the following lines:</p>
+     
+        <source>
+// Doelan permissions
+grant codebase "{PATH_TO_DOELAN}/lib/*" {
+  permission java.lang.RuntimePermission "*";
+  permission java.io.FilePermission "&lt;&lt;ALL FILES&gt;&gt;", "read";
+  permission java.io.FilePermission "&lt;&lt;ALL FILES&gt;&gt;", "write";
+  permission java.util.PropertyPermission "*", "read";
+
+};
+        </source>
+        
+  <p><code>{JAVA_HOME}i</code> is the path to your java installation and <code>{PATH_TO_DOELAN}</code> is the path to Doelan on your filesystem.</p>
+   
+      </subsection>
+      <subsection name="Add the link to the doelan report page in Genepix">
+            
+        <p>To have an access to Doelan in the report tab of Genepix, you must modify the index of the genepix report file: <code>C:\Axon\Scripts\GenePixPro5\Default.htm</code></p> and add the following line in <b>Analysis Reports</b> section:
+      
+        <source>
+&lt;li&gt;
+  &lt;a href="{PATH_TO_DOELAN}\genepix-applet.html"&gt;
+  Doelan Quality Report&lt;/a&gt;.
+&lt;/li&gt;
+        </source>
+        
+      </subsection>
+    
+    </section>
+   
+  </body>
+</document>

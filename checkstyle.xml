@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+
+<module name="Checker">
+<property name="severity" value="warning"/>
+<module name="TreeWalker">
+<module name="FileContentsHolder">
+</module>
+<module name="Header">
+<property name="headerFile" value="${basedir}/checkstyle-license.txt"/>
+</module>
+<module name="LeftCurly">
+</module>
+<module name="RightCurly">
+</module>
+<module name="LineLength">
+<property name="max" value="100"/>
+</module>
+<module name="MethodLength">
+<property name="max" value="175"/>
+</module>
+<module name="ConstantName">
+<property name="format" value="log|^[a-zA-Z][a-zA-Z0-9_]*$"/>
+</module>
+<module name="JavadocType">
+<property name="scope" value="public"/>
+<property name="authorFormat" value="\S"/>
+</module>
+<module name="JavadocMethod">
+<property name="scope" value="public"/>
+</module>
+<module name="JavadocVariable">
+<property name="scope" value="public"/>
+</module>
+<module name="LocalFinalVariableName">
+</module>
+<module name="LocalVariableName">
+</module>
+<module name="MethodName">
+</module>
+<module name="PackageName">
+</module>
+<module name="ParameterName">
+</module>
+<module name="StaticVariableName">
+</module>
+<module name="TypeName">
+</module>
+<module name="MemberName">
+</module>
+<module name="AvoidStarImport">
+</module>
+<module name="IllegalImport">
+</module>
+<module name="RedundantImport">
+</module>
+<module name="UnusedImports">
+</module>
+<module name="FileLength">
+</module>
+<module name="ParameterNumber">
+</module>
+<module name="EmptyForIteratorPad">
+</module>
+<module name="NoWhitespaceAfter">
+</module>
+<module name="NoWhitespaceBefore">
+</module>
+<module name="OperatorWrap">
+</module>
+<module name="TabCharacter">
+</module>
+<module name="WhitespaceAfter">
+</module>
+<module name="WhitespaceAround">
+</module>
+<module name="ModifierOrder">
+</module>
+<module name="RedundantModifier">
+</module>
+<module name="AvoidNestedBlocks">
+</module>
+<module name="EmptyBlock">
+</module>
+<module name="DoubleCheckedLocking">
+</module>
+<module name="EmptyStatement">
+</module>
+<module name="EqualsHashCode">
+</module>
+<module name="IllegalInstantiation">
+</module>
+<module name="InnerAssignment">
+</module>
+<module name="MagicNumber">
+<property name="ignoreNumbers" value="-1, 0, 1, 2, 100"/>
+</module>
+<module name="MissingSwitchDefault">
+</module>
+<module name="RedundantThrows">
+<property name="allowSubclasses" value="true"/>
+</module>
+<module name="SimplifyBooleanExpression">
+</module>
+<module name="SimplifyBooleanReturn">
+</module>
+<module name="StringLiteralEquality">
+</module>
+<module name="SuperClone">
+</module>
+<module name="SuperFinalize">
+</module>
+<module name="IllegalCatch">
+</module>
+<module name="PackageDeclaration">
+</module>
+<module name="JUnitTestCase">
+</module>
+<module name="ParameterAssignment">
+</module>
+<module name="ExplicitInitialization">
+</module>
+<module name="FinalClass">
+</module>
+<module name="HideUtilityClassConstructor">
+</module>
+<module name="InterfaceIsType">
+</module>
+<module name="VisibilityModifier">
+</module>
+<module name="ArrayTypeStyle">
+</module>
+<module name="FinalParameters">
+</module>
+<module name="GenericIllegalRegexp">
+<property name="format" value="\s+$"/>
+<property name="message" value="Line has trailing spaces."/>
+</module>
+<module name="TodoComment">
+</module>
+<module name="UpperEll">
+</module>
+<module name="FinalParameters">
+</module>
+</module>
+<module name="PackageHtml">
+</module>
+<module name="Translation">
+</module>
+<module name="SeverityMatchFilter">
+<property name="severity" value="warning"/>
+</module>
+</module>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+<document>
+
+  <properties>
+    <title>Contribute to Doelan</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+    <section name="How can I contribute to Doelan?">
+    
+
+      <p>Doelan is a free software project. Everybody is encouraged to contribute to Doelan. There are lots of ways in which you can help to continue Doelan:</p>
+
+
+      <ul>
+        <li>Testing new versions</li>
+        <li>Submitting bug reports to the mailing list</li>
+	<!--<li>Writing documentation or help files</li>-->
+	<li>Send your TestSuites (with comments) to the developer to publish it on the website</li>
+        <li>Programming new Doelan plugins</li>
+      </ul>
+
+      <p>There are several places to look for more information if you want to get involved in the development. The first step is to subscribe to the mailing list. You will soon see something that can be improved or added.</p>
+
+
+    </section>
+
+    <section name="How do I commit a bug report?">
+      <p>There is actualy no automatic bug tracking system available like Bugzilla for Doelan. So, to report a bug, you must send your report on the <a href="mail-lists.html">mailing-list</a>.</p>
+    </section>
+
+<!--    <section name="How do I get access to the CVS?">
+      <p>The Doelan project uses the CVS system to develop the core parts of the software. Due to security reasons, we cannot open freely this cvs server to external users of the ENS. So if you want contribute to the core of Doelan, you can send patches to the developer using the developers <a href="mail-lists.html">mailing-list</a>.</p>
+    </section>-->
+
+    <section name="Publish TestTuites and plugins on Doelan website">
+      <p>We can post on the <a href="mail-lists.html">mailing-lists</a> your TestSuite suggestions for publication on website. For the pluggins, please contact the <a href="mailto:%64%6f%65%6c%61%6e%40%62%69%6f%6c%6f%67%69%65%2e%65%6e%73%2e%66%72">developer</a> without sending your plugin in attachment.</p>
+    </section>
+    
+  </body>
+</document>

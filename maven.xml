@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project
+  xmlns:reactor="reactor"
+  xmlns:j="jelly:core"
+  xmlns:u="jelly:util"
+  xmlns:maven="jelly:maven"
+  xmlns:m="maven"
+  xmlns:ant="jelly:ant"
+  xmlns:deploy="deploy">
+
+  <goal name="xdoc2htmldoc">
+    <ant:mkdir dir="${maven.build.dir}/classes/files" />
+    ${systemScope.setProperty('javax.xml.transform.TransformerFactory','org.apache.xalan.processor.TransformerFactoryImpl')}
+    <ant:style basedir="${maven.src.dir}/site/xdocs" destdir="${maven.build.dir}/classes/files"
+         extension=".html" style="${maven.src.dir}/site/stylesheets/site.xml" processor="trax">
+      <include name="test-*.xml"/>
+    </ant:style>
+  </goal>
+
+  <preGoal name="java:compile">
+    <attainGoal name="xdoc2htmldoc"/>
+  </preGoal>
+
+  <goal name="write-app-properties">
+
+    <ant:copy file="${basedir}/src/main/conf/app.properties" todir="${maven.build.dir}"/> 
+
+    <ant:tstamp>
+      <format property="DATE" pattern="dd-MM-yy-H:mm:ss"/>
+      <format property="YEAR" pattern="yyyy"/>
+    </ant:tstamp>
+
+    <ant:echo file="${maven.build.dir}/app.properties" message="${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="launcher.app.name=${pom.name}${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="launcher.app.version=${pom.currentVersion}${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="project.name=${pom.name}${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="project.version=${pom.currentVersion}${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="project.description=${pom.shortDescription}${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="project.compile.date=${DATE}${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="project.url=${pom.url}${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="project.organization.name=${pom.organization.name}${line.separator}" append="true"/>
+    <ant:echo file="${maven.build.dir}/app.properties" message="project.organization.url=${pom.organization.url}${line.separator}" append="true"/>
+
+    <j:if test="${YEAR.equals(pom.inceptionYear)}">
+      <ant:echo file="${maven.build.dir}/app.properties" message="project.copyright.date=${pom.inceptionYear}${line.separator}" append="true"/>
+    </j:if>
+   
+    <j:if test="${!YEAR.equals(pom.inceptionYear)}">
+      <ant:echo file="${maven.build.dir}/app.properties" message="project.copyright.date=${pom.inceptionYear}-${YEAR}${line.separator}" append="true"/>
+    </j:if>
+
+   <ant:copy file="${maven.build.dir}/app.properties" todir="${maven.build.dir}/classes/files"/>
+
+  </goal>
+
+  <postGoal name="dist:prepare-src-filesystem">
+    <attainGoal name="doelan-source-distrib"/>
+  </postGoal>
+  
+  <goal name="doelan-source-distrib">
+   <ant:echo message="**********************************************************"/>  
+   <ant:copy todir="${maven.dist.src.archive.dir}/${maven.final.name}">	       
+     <fileset dir="${basedir}" casesensitive="yes">
+       <include name="project.xml"/>
+       <include name="project.properties"/>
+       <include name="maven.xml"/>
+       <include name="checkstyle-license.txt"/>
+       <include name="checkstyle.xml"/>
+       <include name="LICENSE.txt"/>
+       <include name="COMPILING.txt"/>
+       <include name="README.txt"/>
+       <include name="INSTALL.txt"/>
+       <include name="licenses/*"/>
+       <include name="data/*"/>
+     </fileset>
+   </ant:copy>
+   
+  </goal>
+
+  <preGoal name="jar:jar">
+    <attainGoal name="write-app-properties"/>
+  </preGoal>
+  
+  <postGoal name="dist:prepare-bin-filesystem">
+    <!--<attainGoal name="write-app-properties"/>-->
+    <attainGoal name="doelan-binary-distrib"/>
+  </postGoal>
+  
+  <goal name="doelan-binary-distrib">
+  
+    <!-- create directories -->
+    <ant:mkdir dir="${maven.dist.assembly.dir}" />
+
+    <j:set var="maven.dist.bin.archive.dir.subdir" value="${maven.dist.bin.archive.dir}/${maven.final.name}" />
+    
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}" />
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/docs"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/docs/plugin-sample"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/lib"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/lib/${pom.currentVersion}"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/conf"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/logs"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/data"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/reports"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/plugins"/>
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/launcher-tmp"/>
+
+    <!-- copy app.property to lib directory -->
+    <ant:copy file="${maven.build.dir}/app.properties" todir="${maven.dist.bin.archive.dir.subdir}/lib"/>
+
+    <!-- copy all the dependencies -->
+    <deploy:copy-deps todir="${maven.dist.bin.archive.dir.subdir}/lib/${pom.currentVersion}" excludes="maven-sdocbook-plugin,xalan"/>
+
+    <!-- copy the main jar -->
+    <ant:copy file="${maven.build.dir}/${maven.final.name}.jar" todir="${maven.dist.bin.archive.dir.subdir}/lib/${pom.currentVersion}"/>
+
+    <!-- unjar the launcher -->
+    <ant:unjar dest="${maven.dist.bin.archive.dir.subdir}/launcher-tmp">
+      <fileset dir="${maven.dist.bin.archive.dir.subdir}/lib/${pom.currentVersion}" casesensitive="yes">
+        <include name="launcher*.jar"/>
+      </fileset>
+    </ant:unjar>
+
+    <!-- add the app.properties to the launcher -->
+    <ant:mkdir dir="${maven.dist.bin.archive.dir.subdir}/launcher-tmp/conf"/>
+    <ant:copy file="${maven.build.dir}/app.properties" todir="${maven.dist.bin.archive.dir.subdir}/launcher-tmp/conf"/>
+    <ant:copy file="${maven.dist.bin.archive.dir.subdir}/launcher-tmp/META-INF/MANIFEST.MF" todir="${maven.dist.bin.archive.dir.subdir}"/>
+    <ant:delete dir="${maven.dist.bin.archive.dir.subdir}/launcher-tmp/META-INF"/>
+    
+    <ant:jar destfile="${maven.dist.bin.archive.dir.subdir}/${pom.artifactId}.jar" 
+             basedir="${maven.dist.bin.archive.dir.subdir}/launcher-tmp" 
+	     manifest="${maven.dist.bin.archive.dir.subdir}/MANIFEST.MF"
+	     index="true"/>
+    <ant:delete dir="${maven.dist.bin.archive.dir.subdir}/launcher-tmp"/>
+    <ant:delete file="${maven.dist.bin.archive.dir.subdir}/MANIFEST.MF"/>
+
+
+    <ant:copy todir="${maven.dist.bin.archive.dir.subdir}/docs/plugin-sample">
+      <fileset dir="${maven.src.dir}/main/plugin-sample"/>
+    </ant:copy>
+   
+    <!-- copy scripts (bash, bat files) -->
+    <ant:copy  todir="${maven.dist.bin.archive.dir.subdir}" failonerror="false">
+      <fileset dir="${maven.src.dir}/main/bin" includes="*" casesensitive="yes"/>
+    </ant:copy>
+
+    <!-- copy html files -->
+    <ant:copy  todir="${maven.dist.bin.archive.dir.subdir}" failonerror="false">
+      <fileset dir="${maven.src.dir}/main/html" includes="*" casesensitive="yes"/>
+    </ant:copy>
+
+    <!-- copy configuration files -->
+    <ant:copy  todir="${maven.dist.bin.archive.dir.subdir}/conf" failonerror="false">
+      <fileset dir="${maven.src.dir}/main/conf" includes="*" casesensitive="yes"/>
+    </ant:copy>
+
+    <!-- copy sample data files -->
+    <ant:copy  todir="${maven.dist.bin.archive.dir.subdir}/data" failonerror="false">
+      <fileset dir="${basedir}/data" includes="*" casesensitive="yes"/>
+    </ant:copy>
+
+    <!-- copy the basic documentation files -->
+    <ant:copy todir="${maven.dist.bin.archive.dir.subdir}">
+      <fileset dir="${basedir}" casesensitive="yes">
+        <include name="LICENSE.txt"/>
+        <include name="README.txt"/>
+        <include name="INSTALL.txt"/>
+      </fileset>
+    </ant:copy>
+    
+    <!-- copy licences directory -->
+    <ant:copy  todir="${maven.dist.bin.archive.dir.subdir}/licenses" failonerror="false">
+      <fileset dir="${basedir}/licenses" includes="*" casesensitive="yes"/>
+    </ant:copy>
+
+    <ant:delete file="${maven.dist.bin.archive.dir.subdir}/${maven.final.name}.jar"/>
+
+  </goal>
+
+  <preGoal name="site">
+     <!--<attainGoal name="sdocbook"/> -->
+     <ant:echo message="${pom.url}"/>
+     <ant:echo message="${maven.repo.remote}"/>
+     <attainGoal name="announcement:generate-all"/>
+     <!--<attainGoal name="pdf"/>-->
+  </preGoal>
+
+  <postGoal name="site">
+    <attainGoal name="pdf"/>
+  </postGoal>
+
+  <goal name="site:ftpdeploy2"
+          description="patch for maven's broken site:ftpdeploy">
+
+    <ant:echo message="before"/>
+    
+    <ant:ftp action="send"
+      server="${pom.siteAddress}" 
+      directory="${pom.siteDirectory}"
+      username="${maven.username}"
+      password="${maven.password}" >
+
+      <fileset dir="${maven.docs.dest}"/>
+    </ant:ftp>
+
+    <ant:echo message="after"/>
+
+  </goal>
+
+</project>

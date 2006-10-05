@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="latin1"?> 
+<document> 
+
+  <properties> 
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author> 
+  </properties> 
+
+
+
+  <body>
+  
+    <section name="Known Bugs for Doelan 1.0">
+  
+      <ul> 
+        <li>Remove freezing actions from applet mode. It is a Genepix Bug. Actualy, Axon doesn't support embeded java applets in Genepix.</li>
+	<li>Graphics in Doelan are not antialiased. Due to a bug in Sun Java Virtual Machine, antialiasing isn't turn on. If you enable it, a fatal error sometimes occurs.</li>
+      </ul> 
+      
+    </section>
+
+    <section name="Submit a Doelan bug">
+
+      <!-- doelan-list?subject=Bug -->
+      <p>You can submit a bug by sending a sending a mail to the <a href="mailto:%64%6f%65%6c%61%6e%2d%6c%69%73%74%40%62%69%6f%6c%6f%67%69%65%2e%65%6e%73%2e%66%72%3f%73%75%62%6a%65%63%74%3d%42%75%67">doelan list</a>.</p>
+
+    </section>
+
+  </body>
+  
+</document>

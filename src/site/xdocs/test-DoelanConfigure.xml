@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+<document>
+
+  <properties>
+    <title>DoelanConfigure Element</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+    <section name="DoelanConfigure Element">
+   
+    <subsection name="Description">
+    
+      <p>This element is not a test but an element used to set several global parameters for the TestSuite.</p>
+      
+    </subsection>
+   
+    <subsection name="Parameters">
+    
+      <ul>
+        <li>The list of the "empty" identifiers. That is to say, all the identifiers of the spot that Doelan may consider as empty spots.</li>
+        <li>Column for empty identifiers. This can be the identifier or the description field.</li>
+        <li>The new identifier for the spots which are rejected in the output file. Warning, if this identifier is "empty", rejected spots in the repport map will be considered as abscent (dotted circle) and not as rejected (red filled circle).</li>
+      </ul>
+        
+    </subsection>
+
+    </section>  
+    
+  </body>
+</document>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg602"
+   sodipodi:version="0.34"
+   width="210mm"
+   height="297mm"
+   xml:space="preserve"
+   sodipodi:docname="/home/jourdren/doelan.xml"
+   sodipodi:docbase="/home/jourdren"><defs
+   id="defs604" /><sodipodi:namedview
+   id="base" /><rect
+   style="font-size:12;fill:#aebdd4;fill-rule:evenodd;stroke:#000000;stroke-width:1.354755;"
+   id="rect665"
+   width="226.534937"
+   height="48.4205399"
+   x="207.855745"
+   y="495.988953" /><path
+   sodipodi:type="arc"
+   style="fill-rule:evenodd;stroke:none;fill:gray;fill-opacity:1;stroke-opacity:1;stroke-width:1pt;stroke-linejoin:miter;stroke-linecap:butt;"
+   id="path658"
+   d="M 229.8412 509.4899 A 8.926598 8.92659 0 1 0 211.988 509.4899 A 8.926598 8.92659 0 1 0  229.8412 509.4899 z"
+   sodipodi:cx="220.914581"
+   sodipodi:cy="509.489929"
+   sodipodi:rx="8.9265976"
+   sodipodi:ry="8.92658997"
+   transform="matrix(1.529412,0,0,1.186563,-109.0324,-92.31029)" /><path
+   sodipodi:type="arc"
+   style="fill-rule:evenodd;stroke:none;fill:gray;fill-opacity:1;stroke-opacity:1;stroke-width:1pt;stroke-linejoin:miter;stroke-linecap:butt;"
+   id="path659"
+   d="M 254.4456 522.0172 A 10.20184 15.90283 0 1 0 234.0419 522.0172 A 10.20184 15.90283 0 1 0  254.4456 522.0172 z"
+   sodipodi:cx="244.243744"
+   sodipodi:cy="522.017151"
+   sodipodi:rx="10.2018356"
+   sodipodi:ry="15.902832"
+   transform="matrix(1.529412,0,0,1.186563,-108.7078,-98.8232)" /><path
+   sodipodi:type="arc"
+   style="fill-rule:evenodd;stroke:none;fill:gray;fill-opacity:1;stroke-opacity:1;stroke-width:1pt;stroke-linejoin:miter;stroke-linecap:butt;"
+   id="path660"
+   d="M 229.2411 527.2681 A 4.950882 5.550995 0 1 0 219.3393 527.2681 A 4.950882 5.550995 0 1 0  229.2411 527.2681 z"
+   sodipodi:cx="224.290176"
+   sodipodi:cy="527.268066"
+   sodipodi:rx="4.95088196"
+   sodipodi:ry="5.55099487"
+   transform="matrix(1.529412,0,0,1.186563,-113.487,-94.07794)" /><text
+   style="fill:black;stroke:none;font-family:helvetica;font-style:normal;font-weight:normal;font-size:12px;fill-opacity:1;stroke-opacity:1;stroke-width:1pt;stroke-linejoin:miter;stroke-linecap:butt;"
+   x="80.6449254"
+   y="170.25682"
+   id="text610"
+   transform="scale(3.585198,3.138592)"><tspan
+   id="tspan611">Doelan</tspan></text></svg>

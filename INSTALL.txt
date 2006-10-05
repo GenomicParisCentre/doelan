@@ -1,0 +1,8 @@
+INSTALLING DOELAN
+-----------------
+
+  To install Doelan, see the doc/installing.html or doc/doelan.pdf files.
+
+  For more information visits our website :
+
+    http://transcriptome.ens.fr/doelan

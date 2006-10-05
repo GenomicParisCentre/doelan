@@ -1,0 +1,47 @@
+<document>
+  <properties>
+    <title>Download Doelan 1.0.1 source</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+  <body>
+    <section name="Download Doelan source">
+      <p>
+        Doelan source is distributed in several formats for your convenience.
+      </p>
+      <ul>
+        <li>
+          <a href="/sgdb/download.php?ref=lbdl/doelan-1.0.1-src.tar.gz">
+            <code>.tar.gz</code> archive
+          </a>
+          <span style="font-size: smaller">
+	    (1.5 MiB)
+            <!--(
+            <a href="http://www.transcriptome.ens.fr/sgdb/download.php?doelan/doelan-1.0-rc8-src.tar.gz.md5">checksum</a>)
+            (
+            <a href="http://www.transcriptome.ens.fr/sgdb/download.php?doelan/doelan-1.0-rc8-src.tar.gz.asc">PGP</a>)-->
+          </span>
+        </li>
+        <li>
+          <a href="/sgdb/download.php?ref=lbdl/doelan-1.0.1-src.zip">
+            <code>.zip</code> archive
+          </a>
+          <span style="font-size: smaller">
+	    (1.7 MiB)
+            <!--(
+            <a href="http://www.transcriptome.ens.fr/sgdb/download.php?doelan/doelan-1.0-rc8-src.zip.md5">checksum</a>)
+            (
+            <a href="http://www.transcriptome.ens.fr/sgdb/download.php?doelan/doelan-1.0-rc8-src.zip.asc">PGP</a>)-->
+          </span>
+        </li>
+      </ul>
+      <p>
+        Doelan is distributed under the
+        <a href="license.html">General Public License</a>.
+      </p>
+      <subsection name="Compilation">
+        <p>You'll find more information about how compile Doelan in the <a href="compiling.html">compiling section</a>.</p>
+      </subsection>
+    </section>
+  </body>
+</document>
+

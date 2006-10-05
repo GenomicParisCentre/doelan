@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+<document>
+
+  <properties>
+    <title>QuickStart tutorial</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+    <section name="What is a TestSuite?">
+    
+      <p>A TestSuite is a collection of tests which are apply on chip to validate it.</p>  
+    
+    </section>
+  
+    <section name="How to create a TestSuite">
+    
+      <p>When you launch Doelan for the first time, a message notify you that you need to first create a TestSuite.</p>
+      <center><img src="images/quickstart/quickstart01.png" alt="No TestSuite dialog"/></center>
+      <p>Each TestSuite is link to a chip type, so you need to create a chip type before creating a TestSuite. To create a chip type or TestSuite: on the main tab click on the <b>New</b> button, if this button is hidden, you can show this button and other optionals buttons by pressing on the <b>Show advanced options</b>. Now a dialog box appears, select the type element which you want to create (Chip type or TestSuite), set a name and validate with <b>OK</b> button. If there is no chip type created, you cannot create a TestSuite, you must create a chip type before a TestSuite.</p>
+
+      <center><img src="images/quickstart/quickstart02.png" alt="TestSuite Manager"/></center>
+    
+      <p>Of course with doelan, in addition to create chip type and TestSuite, you can rename and remove this elements.</p>
+    
+    </section>
+
+    
+    <section name="Edit a TestSuite">
+    
+      <p>To edit a TestSuite, you must load it first. Loading a TestSuite is performed by a click on the <b>Load</b> button or by a click on <b>Start</b> button.</p>
+      
+      <p>If you want to show and modify the elements of a TestSuite, you must go to the <b>TestSuite</b> tab of the application. In a recently created Testuite only one element compose the TestSuite. This element is not really a TestSuite but an element to set global parameters of the TestSuite.</p>
+
+      <center><img src="images/quickstart/quickstart03.png" alt="Contextual menu"/></center>
+      
+      <p>To add a new element, right click (or double click) on an existing element, select <b>add</b> and a dialog box appears with the list of all availlable tests. Select one and define an identifier for this test in your TestSuite. This test identifier must be unique.</p>
+
+      <center><img src="images/quickstart/quickstart04.png" alt="Add a test"/></center>
+      
+      <p>There are two kinds of tests in Doelan: global and unit tests. The unit tests provides statistics about chip data while global test provides informations about a set of unit tests results. You can only add one type of global test in a TestSuite.</p>
+      
+      <p>In a TestSuite you can customize all the parameters of the tests. To do so, right click (or double click) on the test which you want to set the parameters and select <b>Modify the parameters</b>.</p>
+      
+      <center><img src="images/quickstart/quickstart05.png" alt="Modify a test"/></center>
+      
+      <p>Go to the <a href="">available tests page</a> for more information about test parameters. You can also, of course remove a test in a TestSuite with the <b>Remove test</b> option in the contextual menu.</p>
+      
+      <p>You can show additional information about the test with the <b>About test</b> and <b>Test documentation</b>.</p>
+   
+      <center><img src="images/quickstart/quickstart06.png" alt="About a test"/></center>
+
+      <br/>
+
+      <center><img src="images/quickstart/quickstart07.png" alt="Test documentation"/></center>
+   
+    </section> 
+    
+
+    <section name="Launching a TestSuite">
+    
+    <p>To start a TestSuite: in the main tab, select a GPR file and a GAL file, add a comment about the array (optional), select a TestSuite and click on the <b>Start</b> button. Doelan can also handle ImaGene files. To load Imagene result files, select "ImaGene Output File" in the dialog box and select the two files of the result (by pressing the shift key).</p>
+
+    <center><img src="images/quickstart/quickstart08.png" alt="Select a GPR and a GAL File"/></center>
+
+    <br/>
+    
+    <center><img src="images/quickstart/quickstart09.png" alt="Start a test suite"/></center>
+    
+    <p>In the status bar and in the TestSuite tab, you can follow the progress of the executed TestSuite. At the end of the execution of a TestSuite a detailled report is avaivable in the report tab.</p>        
+   
+    <center><img src="images/quickstart/quickstart10.png" alt="TestSuite progress"/></center>	
+   
+    <p>Giving an array list file (GAL file) is optional but there are two benefits to do so: First, in the report tab you can see an image which represents the locations on the microarray of spots which pass the tests. And secondly, you can save an output array list without rejected spots.</p>
+
+    
+    </section>
+    
+    
+    <section name="Report">
+    
+    <p>After launching a TestSuite, Doelan generates a four parts report. The first part shows general informations about the TestSuite used such as the current date or the name of the TestSuite. The second part summaries all the results of the TestSuite. The next part shows detailed informations about all tests with parameters values, the result, a comment and sometimes one or more graph to visualize the results. If an array list file was selected, the last part of the report and represents the locations on the microarray of spots which pass the tests (in green) and which does not (in red).</p>
+    <center><img src="images/quickstart/quickstart11.png" alt="TestSuite report"/></center>
+    
+    </section>
+    
+
+    <section name="Save results">
+    
+   <p>The report can be saved in HTML format or can be printed. If an array list data was selected, the creation of a new array list file without all the rejected spots is allowed (except if the input array list file is an ImaGene Gene ID file). The identifiers of all this spots will be set to a new "empty" identifier and the description field will notify the origin of the rejection. Warning, if this new identifier is in the list of "empty" identifiers, rejected spots in the repport map will be considered as abscent (dotted circle) and not as rejected (red filled circle).</p>
+   
+    <center><img src="images/quickstart/quickstart12.png" alt="TestSuite report options"/></center>
+   
+    </section>
+    
+  </body>
+</document>

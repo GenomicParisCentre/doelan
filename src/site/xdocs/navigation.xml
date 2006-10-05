@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+ -->
+
+<project name="Doelan">
+
+  <title>Doelan</title>
+
+  <body>
+    <links>
+      <item name="ENS microarray platform"             href="http://transcriptome.ens.fr"/>
+      <item name="École Normale Supérieure"            href="http://www.ens.fr" />
+      <item name="PDF Documentation"                   href="/doelan.pdf" img="/images/logos/acroread-12.png" target="_blank"/>
+    </links>
+
+
+    <menu name="About Doelan">
+      <item name="What is Doelan ?"                    href="/index.html"/>
+<!--      <item name="Feature Summary"                     href="/features.html"/>-->
+<!--      <item name="Doelan Sample Report"                href="/sample/demo.html"/>-->
+      <item name="Screenshots"                         href="/screenshots.html"/>
+      <item name="License"                             href="/license.html"/>
+      <item name="People behind Doelan"                href="/people.html"/>
+<!--      <item name="Contact"                             href="/contact.html"/> -->
+      <item name="How to cite Doelan"                href="/howtocite.html"/>
+    </menu>
+
+    <menu name="Getting Doelan">
+      <item name="Downloading"                         href="/download.html"/>
+      <item name="Installing"                          href="/installing.html"/>
+      <item name="Release Notes"                       href="/changes-report.html"/>
+    </menu>
+
+    <menu name="Documentation">
+      <item name="QuickStart tutorial"                 href="/quickstart.html"/>
+      <item name="Available tests"                     href="/tests.html" collapse="true">
+        <item name="DoelanConfigure"                   href="/test-DoelanConfigure.html" collapse="true"/>
+        <item name="BadFeature"                        href="/test-BadFeatureTest.html" collapse="true"/>
+        <item name="AbsentFeature"                     href="/test-AbsentFeatureTest.html" collapse="true"/>
+        <item name="NotFoundFeature"                   href="/test-NotFoundFeatureTest.html" collapse="true"/>
+        <item name="MaxBadFeatures"                    href="/test-GlobalMaxBadFeaturesTest.html" collapse="true"/>
+        <item name="MaxBadFeaturesRemoved"             href="/test-GlobalMaxBadFeaturesRemovedTest.html" collapse="true"/>
+        <item name="HeterogeneousFeature"              href="/test-HeterogeneousFeatureTest.html" collapse="true"/>
+        <item name="SaturatedPixels"                   href="/test-SaturatedPixelsTest.html" collapse="true"/>
+        <item name="MinimalIntensity"                      href="/test-MinimalIntensityTest.html" collapse="true"/>
+        <item name="MaxDiameterFeature"                href="/test-MaxDiameterFeatureTest.html" collapse="true"/>
+        <item name="MinDiameterFeature"                href="/test-MinDiameterFeatureTest.html" collapse="true"/>
+        <item name="Generic"                           href="/test-GenericTest.html" collapse="true"/>
+      </item>
+      <item name="Writing your own test"               href="/writing-plugin.html"/>
+      <item name="PDF documentation"                   href="/doelan.pdf" target="_blank"/>
+ 
+      <!--<item name="Genepix integration"                 href="/installing.html#genepix"/>-->
+      <!--<item name="FAQ"                                 href="/faq.html"/>-->
+    </menu>
+
+    <menu name="Development">
+      <item name="Get the source"                      href="/download-src.html"/>
+      <item name="Compiling"                           href="/compiling.html"/>
+      <item name="Known bugs"                          href="/bugs.html"/>
+      <item name="Futur improvements"                  href="/todo.html"/>
+      <item name="Contribute to Doelan"                href="/contribute.html"/>
+    </menu>
+
+    <menu name="Community">
+      <item name="Additional TestSuites"              href="/additional-testsuites.html"/>
+      <item name="Additional Test Plug-ins"            href="/additional-plugins.html"/>
+      <item name="Mailing list"                        href="/mail-lists.html"/>
+      <!--<item name="Powered by Doelan"                   href="/poweredby.html"/>-->
+    </menu>
+
+    <search/>
+
+  </body>
+</project>

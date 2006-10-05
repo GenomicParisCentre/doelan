@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+ *                Doelan development code
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU General Public Licence.  This should
+ * be distributed with the code. If you do not have a copy,
+ * see:
+ *
+ *      http://www.gnu.org/copyleft/gpl.txt
+ *
+ * Copyright (c) 2004-2005 ENS Microarray Platform
+ * Copyright for this code is held jointly by the individual
+ * authors.  These should be listed in @author doc comments.
+ *
+ * For more information on the Doelan project and its aims,
+ * or to join the Doelan mailing list, visit the home page
+ * at:
+ *
+ *      http://www.transcriptome.ens.fr/doelan
+ */
+-->
+<document>
+
+  <properties>
+    <title>Powered by Doelan</title>
+    <author email="jourdren@biologie.ens.fr">Laurent Jourdren</author>
+  </properties>
+
+  <body>
+  
+    <section name="Platforms using Doelan">
+    
+    <p>The following platform are using Doelan to control the quality of produced microarrays:</p>
+    <ul>
+      <li><a href="http://transcriptome.ens.fr/sgdb">École Normale Supérieure Microarray platform</a>.</li>
+    </ul>
+    
+    <p>If you are using Doelan <a href="contact.html">send</a> your coordinates and your comments, we will publish it on this page.</p>
+    </section>  
+    
+  </body>
+</document>
