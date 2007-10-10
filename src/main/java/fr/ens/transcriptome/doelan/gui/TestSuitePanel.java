@@ -59,6 +59,7 @@ import fr.ens.transcriptome.doelan.DoelanRegistery;
 import fr.ens.transcriptome.doelan.algorithms.QualityTest;
 import fr.ens.transcriptome.doelan.data.QualityTestSuiteURL;
 import fr.ens.transcriptome.nividic.platform.PlatformException;
+import fr.ens.transcriptome.nividic.platform.gui.AboutModuleWidget;
 import fr.ens.transcriptome.nividic.platform.module.AboutModule;
 import fr.ens.transcriptome.nividic.platform.module.Module;
 import fr.ens.transcriptome.nividic.platform.module.ModuleLocation;
@@ -67,7 +68,6 @@ import fr.ens.transcriptome.nividic.platform.module.ModuleQuery;
 import fr.ens.transcriptome.nividic.platform.workflow.Algorithm;
 import fr.ens.transcriptome.nividic.platform.workflow.WorkflowElement;
 import fr.ens.transcriptome.nividic.util.SystemUtils;
-import fr.ens.transcriptome.nividic.util.gui.AboutModuleWidget;
 import fr.ens.transcriptome.nividic.util.gui.BrowserWidget;
 import fr.ens.transcriptome.nividic.util.gui.ExternalBrowserLinkListener;
 

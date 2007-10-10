@@ -32,7 +32,7 @@ import fr.ens.transcriptome.doelan.data.TestSuiteResultData;
 import fr.ens.transcriptome.nividic.om.BioAssay;
 import fr.ens.transcriptome.nividic.om.BioAssayFactory;
 import fr.ens.transcriptome.nividic.om.GenepixResults;
-import fr.ens.transcriptome.nividic.om.io.BioAssayReader;
+import fr.ens.transcriptome.nividic.om.io.InputStreamBioAssayReader;
 import fr.ens.transcriptome.nividic.om.io.GPRReader;
 import fr.ens.transcriptome.nividic.om.io.ImaGeneArrayListReader;
 import fr.ens.transcriptome.nividic.om.io.ImaGeneOutputFileReader;
@@ -219,7 +219,7 @@ public class DoelanLoadGenepixData extends Algorithm implements Module {
     BioAssay b = null;
 
     try {
-      BioAssayReader bar = new GPRReader(new FileInputStream(filename));
+      InputStreamBioAssayReader bar = new GPRReader(new FileInputStream(filename));
       bar.addAllFieldsToRead();
 
       b = bar.read();

@@ -66,8 +66,9 @@ public class MinimalIntensityTest extends QualityUnitTest implements Module {
 
       ModuleDescription md = null;
       try {
-        md = new ModuleDescription("MinimalIntensityTest",
-            "Test if the spots have the required minimal intensity");
+        md =
+            new ModuleDescription("MinimalIntensityTest",
+                "Test if the spots have the required minimal intensity");
         md.setWebsite(DoelanRegistery.getAppURL());
         md.setHTMLDocumentation(SystemUtils.readTextRessource("/files/test-"
             + SystemUtils.getClassShortName(this.getClass()) + ".html"));
@@ -90,30 +91,33 @@ public class MinimalIntensityTest extends QualityUnitTest implements Module {
 
     try {
 
-      final Parameter minimalIntensity = new ParameterBuilder().withName(
-          "minimalIntensity").withLongName("Minimal spot intensity").withType(
-          Parameter.DATATYPE_INTEGER).withDescription(
-          "Minimal intensity of a spot").withGreaterThanValue(0)
-          .withDefaultValue("50").getParameter();
+      final Parameter minimalIntensity =
+          new ParameterBuilder().withName("minimalIntensity").withLongName(
+              "Minimal spot intensity").withType(Parameter.DATATYPE_INTEGER)
+              .withDescription("Minimal intensity of a spot")
+              .withGreaterThanValue(0).withDefaultValue("50").getParameter();
 
-      final Parameter channel = new ParameterBuilder().withName("channel")
-          .withLongName("Channel(s)").withType(Parameter.DATATYPE_STRING)
-          .withDescription("Channel(s) to test").withChoices(
-              new String[] {CHANNEL_CY5, CHANNEL_CY3, CHANNEL_CY3CY5})
-          .withDefaultValue(CHANNEL_CY3CY5).getParameter();
+      final Parameter channel =
+          new ParameterBuilder().withName("channel").withLongName("Channel(s)")
+              .withType(Parameter.DATATYPE_STRING).withDescription(
+                  "Channel(s) to test").withChoices(
+                  new String[] {CHANNEL_CY5, CHANNEL_CY3, CHANNEL_CY3CY5})
+              .withDefaultValue(CHANNEL_CY3CY5).getParameter();
 
-      final Parameter threshold = new ParameterBuilder().withName("threshold")
-          .withLongName("Maximal threshold of bad spots").withType(
+      final Parameter threshold =
+          new ParameterBuilder().withName("threshold").withLongName(
+              "Maximal threshold of bad spots").withType(
               Parameter.DATATYPE_DOUBLE).withDescription(
               "Threshold of invalid spots to reject the chip")
-          .withGreaterThanValue(0).withDefaultValue("10").withUnit("%")
-          .getParameter();
+              .withGreaterThanValue(0).withDefaultValue("10").withUnit("%")
+              .getParameter();
 
-      final Parameter filterFlags = new ParameterBuilder().withName(
-          "filterFlags").withType(Parameter.DATATYPE_YESNO).withLongName(
-          "Remove bad spots from output array list").withDescription(
-          "Remove invalid spots in output arraylist file.").withDefaultValue(
-          "yes").getParameter();
+      final Parameter filterFlags =
+          new ParameterBuilder().withName("filterFlags").withType(
+              Parameter.DATATYPE_YESNO).withLongName(
+              "Remove bad spots from output array list").withDescription(
+              "Remove invalid spots in output arraylist file.")
+              .withDefaultValue("yes").getParameter();
 
       final FixedParameters params = new FixedParameters();
       params.addParameter(minimalIntensity);
@@ -149,14 +153,14 @@ public class MinimalIntensityTest extends QualityUnitTest implements Module {
 
     try {
 
-      final int minimalIntensity = getParameters().getParameter(
-          "minimalIntensity").getIntValue();
-      final double threshold = getParameters().getParameter("threshold")
-          .getDoubleValue();
-      final boolean filterFlags = parameters.getParameter("filterFlags")
-          .getBooleanValue();
-      final String channel = parameters.getParameter("channel")
-          .getStringValue();
+      final int minimalIntensity =
+          getParameters().getParameter("minimalIntensity").getIntValue();
+      final double threshold =
+          getParameters().getParameter("threshold").getDoubleValue();
+      final boolean filterFlags =
+          parameters.getParameter("filterFlags").getBooleanValue();
+      final String channel =
+          parameters.getParameter("channel").getStringValue();
 
       boolean testGreen = true;
       boolean testRed = true;
@@ -180,9 +184,6 @@ public class MinimalIntensityTest extends QualityUnitTest implements Module {
         si.next();
         results[si.getIndex()] = true;
 
-        if (si.getFlag() == BioAssay.FLAG_ABSCENT)
-          continue;
-
         if (!si.isEmpty() && !si.isFlagAbscent()) {
 
           boolean notPassRed = si.getRed() < minimalIntensity;
@@ -205,8 +206,8 @@ public class MinimalIntensityTest extends QualityUnitTest implements Module {
       result = new QualityUnitTestResult(bioassay, this);
 
       final long max = (long) (countRealSpot * threshold / 100);
-      result.setMessage("Features with invalid invalid intensity : " + count
-          + "/" + countRealSpot + " features (threshold: " + max
+      result.setMessage("Features with invalid invalid intensity : "
+          + count + "/" + countRealSpot + " features (threshold: " + max
           + " features)<br>");
 
       result.setGlobalResultType(true);
@@ -278,7 +279,7 @@ public class MinimalIntensityTest extends QualityUnitTest implements Module {
   /**
    * Public constructor.
    * @throws PlatformException If the name or the version of the element is
-   *           <b>null </b>.
+   *             <b>null </b>.
    */
   public MinimalIntensityTest() throws PlatformException {
     // MUST BE EMPTY
